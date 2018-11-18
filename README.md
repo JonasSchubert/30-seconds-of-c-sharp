@@ -266,12 +266,7 @@ namespace snippets.Array
     {
         public static bool All<T>(Func<T, bool> func, params T[] elements)
         {
-            foreach (var element in elements)
-            {
-                if (!func(element)) return false;
-            }
-
-            return true;
+            return elements.All(func);
         }
     }
 }
