@@ -7,12 +7,30 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 
 ## Table of Contents
 
-### 📚 Array
+### ⏱️ Date
 
 <details>
 <summary>View contents</summary>
 
-* [`all`](#all)
+* [`dayOfYear`](#dayOfYear)
+* [`formatDuration`](#formatDuration)
+* [`getColonTimeFromDate`](#getColonTimeFromDate)
+* [`getDaysDiffBetweenDates`](#getDaysDiffBetweenDates)
+* [`getMeridiumSuffixOfInteger`](#getMeridiumSuffixOfInteger)
+* [`isAfterDate`](#isAfterDate)
+* [`isBeforeDate`](#isBeforeDate)
+* [`isSameDate`](#isSameDate)
+* [`maxDate`](#maxDate)
+* [`minDate`](#minDate)
+* [`tomorrow`](#tomorrow)
+
+</details>
+
+### 📚 Enumerable
+
+<details>
+<summary>View contents</summary>
+
 * [`allEqual`](#allEqual)
 * [`any`](#any)
 * [`arrayToCsv`](#arrayToCsv)
@@ -56,7 +74,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`jsonToCsv`](#jsonToCsv)
 * [`last`](#last)
 * [`longestItem`](#longestItem)
-* [`mapObject`](#mapObject)
 * [`maxN`](#maxN)
 * [`minN`](#minN)
 * [`none`](#none)
@@ -103,25 +120,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`uniqueSymmetricDifference`](#uniqueSymmetricDifference)
 * [`without`](#without)
 * [`xProd`](#xProd)
-
-</details>
-
-### ⏱️ Date
-
-<details>
-<summary>View contents</summary>
-
-* [`dayOfYear`](#dayOfYear)
-* [`formatDuration`](#formatDuration)
-* [`getColonTimeFromDate`](#getColonTimeFromDate)
-* [`getDaysDiffBetweenDates`](#getDaysDiffBetweenDates)
-* [`getMeridiumSuffixOfInteger`](#getMeridiumSuffixOfInteger)
-* [`isAfterDate`](#isAfterDate)
-* [`isBeforeDate`](#isBeforeDate)
-* [`isSameDate`](#isSameDate)
-* [`maxDate`](#maxDate)
-* [`minDate`](#minDate)
-* [`tomorrow`](#tomorrow)
 
 </details>
 
@@ -186,7 +184,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`csvToArray`](#csvToArray)
 * [`csvToJson`](#csvToJson)
 * [`decapitalize`](#decapitalize)
-* [`endsWith`](#endsWith)
+* [`endsWithRegex`](#endsWithRegex)
 * [`escapeHtml`](#escapeHtml)
 * [`escapeRegExp`](#escapeRegExp)
 * [`fromCamelCase`](#fromCamelCase)
@@ -203,7 +201,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`reverseString`](#reverseString)
 * [`sortCharactersInString`](#sortCharactersInString)
 * [`splitLines`](#splitLines)
-* [`startsWith`](#startsWith)
+* [`startsWithRegex`](#startsWithRegex)
 * [`stringPermutations`](#stringPermutations)
 * [`stripHtmlTags`](#stripHtmlTags)
 * [`toCamelCase`](#toCamelCase)
@@ -222,7 +220,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <details>
 <summary>View contents</summary>
 
-* [`getType`](#getType)
 * [`is`](#is)
 * [`isValidJson`](#isValidJson)
 
@@ -248,25 +245,25 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 </details>
 
 ---
- ## 📚 Array
+ ## ⏱️ Date
 
-### all
+### dayOfYear
 
-Returns `true` if the provided function returns `true` for all elements of an array, `false` otherwise.
-
-The method has a function as first parameter and params as second. It iterates over the params and checks if the provided function always returns true.
+Returns the day of the current year
 
 Already integrated into C#
-https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.all?view=netframework-4.7.2
+https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netframework-4.7.2
 
-```c#
-namespace snippets.Array
+``` c#
+using System;
+
+namespace snippets.Date
 {
-    public static partial class SnippetsArray
+    public static partial class SnippetsDate
     {
-        public static bool All<T>(Func<T, bool> func, params T[] elements)
+        public static int DayOfYear()
         {
-            return elements.All(func);
+            return DateTime.Now.DayOfYear;
         }
     }
 }
@@ -275,14 +272,207 @@ namespace snippets.Array
 <details>
 <summary>Examples</summary>
 
-```c#
-SnippetsArray.All(((bool element) => !element), false, false, false) # true
-SnippetsArray.All(((int element) => element > 0), -1, 4, 5) # false
+``` c#
+conplement.snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
+
+### formatDuration
+
+Returns the human readable format of the given number of milliseconds.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### getColonTimeFromDate
+
+Returns a string of the form `HH:MM:SS` from a `DateTime` or `TimeSpan` object.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### getDaysDiffBetweenDates
+
+Returns the difference (in days) between two dates.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### getMeridiumSuffixOfInteger
+
+Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### isAfterDate
+
+Check if a date is after another date.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### isBeforeDate
+
+Check if a date is before another date.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### isSameDate
+
+Check if a date is the same as another date.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### maxDate
+
+Returns the maximum of the given dates.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### minDate
+
+Returns the minimum of the given dates.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### tomorrow
+
+Returns tomorrow's date.
+
+```c#
+// TODO
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+// TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+
+---
+ ## 📚 Enumerable
 
 ### allEqual
 
@@ -612,14 +802,47 @@ Removes elements from the end of an array until the passed function returns `tru
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-// TODO
+namespace conplement.snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> DropWhile<T>(this IEnumerable<T> list, Func<T, bool> filter)
+        {
+            if (list == null)
+            {
+                throw new ArgumentNullException(nameof(list));
+            }
+
+            if (filter == null)
+            {
+                throw new ArgumentNullException(nameof(filter));
+            }
+
+            var reachedDropPoint = false;
+
+            foreach (var element in list)
+            {
+                if (!reachedDropPoint && !filter(element))
+                {
+                    continue;
+                }
+
+                reachedDropPoint = true;
+
+                yield return element;
+            }
+
+            yield break;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int>{ 1, 2, 3, 4, 1}.DropWhile(x => x => x > 2); # new List<int> { 3, 4, 1 }
 ```
 
 </details>
@@ -860,14 +1083,43 @@ Returns all the elements of an array except the last one.
 Initializes a 2D array of given width and height and value.
 
 ```c#
-// TODO
+namespace conplement.snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static T[,] Initialize2DArray<T>(uint width, uint height, T defaultValue = default(T))
+        {
+            if (width == 0)
+            {
+                throw new ArgumentException($"Minimum {nameof(width)} has to be 1", nameof(width));
+            }
+
+            if (height == 0)
+            {
+                throw new ArgumentException($"Minimum {nameof(height)} has to be 1", nameof(height));
+            }
+
+            var newArray = new T[width, height];
+
+            for (int widthIndex = 0; widthIndex < width; widthIndex++)
+            {
+                for (int heightIndex = 0; heightIndex < height; heightIndex++)
+                {
+                    newArray[widthIndex, heightIndex] = defaultValue;
+                }
+            }
+
+            return newArray;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+Enumerable.Initialize2DArray(2, 2, 0) # new int[2, 2] { { 0, 0 }, { 0, 0 } }
 ```
 
 </details>
@@ -1089,25 +1341,6 @@ Returns the last element in an array.
 Takes any number of iterable objects or objects with a `length` property and returns the longest one.
 If multiple objects have the same length, the first one will be returned.
 Returns `-1` if no arguments are provided.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### mapObject ![advanced](/advanced.svg)
-
-Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.
 
 ```c#
 // TODO
@@ -2006,233 +2239,6 @@ Creates a new array out of the two supplied by creating each possible pair from 
 
 
 ---
- ## ⏱️ Date
-
-### dayOfYear
-
-Returns the day of the current year
-
-Already integrated into C#
-https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netframework-4.7.2
-
-``` c#
-using System;
-
-namespace snippets.Date
-{
-    public static partial class SnippetsDate
-    {
-        public static int DayOfYear(DateTime dateTime)
-        {
-            return dateTime.DayOfYear;
-        }
-    }
-}
-```
-
-<details>
-<summary>Examples</summary>
-
-``` c#
-SnippetsDate.DayOfYear(new DateTime(2016, 12, 31)) # 12/31/2016: day 366 of 2016 (Leap Year)
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### formatDuration
-
-Returns the human readable format of the given number of milliseconds.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### getColonTimeFromDate
-
-Returns a string of the form `HH:MM:SS` from a `DateTime` or `TimeSpan` object.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### getDaysDiffBetweenDates
-
-Returns the difference (in days) between two dates.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### getMeridiumSuffixOfInteger
-
-Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### isAfterDate
-
-Check if a date is after another date.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### isBeforeDate
-
-Check if a date is before another date.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### isSameDate
-
-Check if a date is the same as another date.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### maxDate
-
-Returns the maximum of the given dates.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### minDate
-
-Returns the minimum of the given dates.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### tomorrow
-
-Returns tomorrow's date.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-
----
  ## ➗ Math
 
 ### approximatelyEqual
@@ -2264,14 +2270,14 @@ Linq documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
 
 ```c#
-namespace snippets.Math
+namespace conplement.snippets.Math
 {
-    public static partial class SnippetsMath
+    public static partial class Math
     {
-        public static decimal Average(params decimal[] elements)
+        public static double Average(this uint[] elements)
         {
             if (elements.Length == 0) return 0;
-            return elements.Sum() / elements.Length;
+            return elements.Aggregate(0.0, (current, element) => current + element) / elements.Length;
         }
     }
 }
@@ -2281,7 +2287,7 @@ namespace snippets.Math
 <summary>Examples</summary>
 
 ```c#
-SnippetsMath.Average(-3, 4, 10, -3) # 2
+{ 4, 5, 9, 1, 0 }.Average() # 3.8
 ```
 
 </details>
@@ -2869,13 +2875,13 @@ Returns the number of times a function executed per second.
 Iterates over a callback `n` times
 
 ```c#
-namespace snippets.Method
+namespace conplement.snippets.Method
 {
-    public static partial class SnippetsMethod
+    public static partial class Method
     {
-        public static IList<T> Times<T>(Func<T> func, uint times)
+        public static IList<T1> Times<T1>(Func<T1> func, uint times)
         {
-            var list = new List<T>();
+            var list = new List<T1>();
 
             for (var index = 0; index < times; index++)
             {
@@ -2892,8 +2898,8 @@ namespace snippets.Method
 <summary>Examples</summary>
 
 ```c#
-SnippetsMethod.Times((() => true), 3) # list of size 3, all values true
-SnippetsMethod.Times((() => new Random().Next(0, 100)), 6) # list of size 6 with 6 random integers
+Method.Times((() => true), 3) # list of size 3, all values true
+Method.Times(((int start, int end) => new Random().Next(start, end)), 6, 0, 100) # list of size 6 with 6 random integers between 0 and 100
 ```
 
 </details>
@@ -3038,21 +3044,21 @@ Decapitalizes the first letter of a string.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### endsWith
+### endsWithRegex
 
-Check if a string is ends with a given substring using a regex, a value, stringcomparison or cultureinfo
+Check if a string is ends with a given substring using a regex
 
-The method excepts the string to test, either a regex, another only string or a string with stringComparison setting
+The method excepts the string to test and a regex
 
-Already integrated into C#
+Most other checks are already integrated into C#
 https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith?view=netframework-4.7.2
 
 ```c#
-namespace snippets.String
+namespace conplement.snippets.String
 {
-    public static partial class SnippetsString
+    public static partial class String
     {
-        public static bool EndsWith(string input, Regex regex)
+        public static bool EndsWithRegex(this string input, Regex regex)
         {
             return regex.IsMatch(input);
         }
@@ -3064,7 +3070,7 @@ namespace snippets.String
 <summary>Examples</summary>
 
 ```c#
-SnippetsString.EndsWith("Hello World", new Regex(@"[dolrwDOLRW]{5}$")) # true
+"Hello World".EndsWithRegex(new Regex(@"[dolrwDOLRW]{5}$")) # true
 ```
 
 </details>
@@ -3375,9 +3381,9 @@ Splits a multiline string into an array of lines.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### startsWith
+### startsWithRegex
 
-Check if a string starts with a given substring.
+Check if a string starts with a given regex.
 
 ```c#
 // TODO
@@ -3590,38 +3596,6 @@ Converts a given string into an array of words.
 ---
  ## 📃️ Type
 
-### getType
-
-Returns the native type of a value.
-
-Already integrated into C#
-https://docs.microsoft.com/de-de/dotnet/api/system.object.gettype?view=netframework-4.7.2
-
-```c#
-namespace snippets.Type
-{
-    public static partial class SnippetsType
-    {
-        public static System.Type GetType(object obj)
-        {
-            return obj.GetType();
-        }
-    }
-}
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-SnippetsType.GetType(new DateTime()) # DateTime
-SnippetsType.GetType("Hello world") # String
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### is
 
 Checks if the provided value is of the specified type.
@@ -3824,9 +3798,9 @@ Stopwatch documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
 
 ```c#
-namespace snippets.Utility
+namespace conplement.snippets.Utility
 {
-    public static partial class SnippetsUtility
+    public static partial class Utility
     {
         public static (long, T1) TimeTaken<T1>(Func<T1> func)
         {
@@ -3843,7 +3817,7 @@ namespace snippets.Utility
 <summary>Examples</summary>
 
 ```c#
-SnippetsUtility.TimeTaken(() => true) # 13.37ms, true
+Utility.TimeTaken(() => true) # 13.37ms, true
 ```
 
 </details>

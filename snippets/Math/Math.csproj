@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>conplement.snippets.Math</AssemblyName>
+    <RootNamespace>conplement.snippets.Math</RootNamespace>
+    <Version>0.1.0</Version>
+    <Authors>Jonas Schubert</Authors>
+    <Company>conplementAG</Company>
+    <Description>A curated collection of useful C# snippets about math that you can understand in 30 seconds or less.</Description>
+    <Copyright>conplementAG</Copyright>
+    <PackageLicenseUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/projects/1</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>

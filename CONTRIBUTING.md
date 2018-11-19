@@ -14,7 +14,7 @@ Here's what you can do to help:
 ### Snippet submission and Pull request guidelines
 
 - **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. We ([conplementAG](https://www.conplement.de/)) will update the `README.md` file when your pull request is merged.
-- **Snippet filenames** must correspond to the title of the snippet and the topic it is connected to. For example, if your snippet is under the topic `### array` and is titled `### awesomeSnippet` the filename for should be `Array.AwesomeSnippet.cs` and the method name should be `AwesomeSnippet`.
+- **Snippet filenames** must correspond to the title of the snippet and the topic it is connected to. For example, if your snippet is under the topic `Enumerable` and is titled `AwesomeSnippet` the filename for should be `Enumerable.AwesomeSnippet.cs` and the method name should be `AwesomeSnippet`.
   - Use `lowerCamelCase` for parameters and variables and `UpperCamelCase` for all other identifiers, not `kebab-case` or `snake_case`.
   -  Please follow the (dotnet)[https://docs.microsoft.com/en-US/dotnet/standard/design-guidelines/] guidelines.
 - **Snippet titles** should have be the same as the name of the method that is present in the snippet.
@@ -22,19 +22,13 @@ Here's what you can do to help:
 - **Snippet descriptions** must be short and to the point. Try to explain *what* the snippet does and *how* the snippet works and what **inbuilt** features/modules are used. Remember to include what functions you are using and why.
   - Snippet descriptions should be in the description header of the method
 - **Snippets _CAN NOT_ use any external libraries or apis**. Only the libraries, apis and functions inbuilt in `C# 7.0`(upwards) shall be used.
-- **Snippet example code** should be added next to the .cs-file and named equally to it but with file ending .md (e.g. Array.AwesomeSnippet.md)
-- **Snippet example code** must be enclosed inside ` ```c# ` and ` ``` `.
-  - Remember to start your snippet's code on a new line below the opening backticks.
-  - You can write the code in any style you like but eventually it will be formated during pull request validation so the formatting will change.
-  - Try to keep your snippets' code short and to the point. Use modern techniques and features. Make sure to test your code before submitting.
-  - All snippets must be followed by one (more if necessary) test case after the code, in a new block enclosed inside ` ```c# ` and ` ``` `. The syntax for this is `MyMethod('testInput') # 'testOutput'`. Use multiline examples only if necessary.
-  - Try to make your method name unique, so that it does not conflict with existing snippets.
-  - Snippet methods do not have to handle errors in input, unless it's necessary (e.g. a mathematical method that cannot be extended to negative numbers should handle negative input appropriately).
 - Snippets should be short (usually below 20 - 30 lines). If your snippet is longer than that, you can still submit it, and we can help you shorten it or figure out ways to improve it.
 - Snippets *should* solve real-world problems, no matter how simple.
 - Snippets *should* be abstract enough to be applied to different scenarios.
 - It is not mandatory but highly appreciated if you provide **unit tests** and/or **performance tests**.
-- You can start creating a new snippet, by using the [snippet template c#](Template.SnippetTemplate.cs) and [snippet template md](Template.SnippetTemplate.md) to format your snippets.
+  - While implementing it is best to use Test Driven Development for those small snippets
+  - You know already the expected result of your snippet, so right your test first, implement it and test it
+- You can start creating a new snippet, by using the [snippet template c#](Template.SnippetTemplate.cs) to format your snippets.
 - You may add your name as `[Name][@github_username]` to the contributor database. If the snippet already exists and you are making changes to it you can add your name at the laste seperated by a comma.
 <!--
 ### Additional guidelines and conventions regarding snippets
