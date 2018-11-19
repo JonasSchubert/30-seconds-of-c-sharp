@@ -7,7 +7,7 @@
 
     <Authors>Jonas Schubert</Authors>
 
-    <Company>GuepardoApps</Company>
+    <Company>conplementAG</Company>
 
     <Product>Unit tests for 30 seconds of C#</Product>
 
@@ -15,11 +15,11 @@
 
     <Copyright>GuepardoApps (Jonas Schubert)</Copyright>
 
-    <PackageLicenseUrl>https://github.com/GuepardoApps/30-seconds-of-c-sharp/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md</PackageLicenseUrl>
 
-    <PackageProjectUrl>https://github.com/GuepardoApps/30-seconds-of-c-sharp/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/</PackageProjectUrl>
 
-    <RepositoryUrl>https://github.com/GuepardoApps/30-seconds-of-c-sharp/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/</RepositoryUrl>
 
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>

@@ -4,15 +4,15 @@
 
 Here's what you can do to help:
 
-- [Open issues](https://github.com/guepardoapps/30-seconds-of-c-sharp/issues/new) for things you want to see added or modified.
-- Be part of the discussion by helping out with [existing issues](https://github.com/guepardoapps/30-seconds-of-c-sharp/issues).
-- Submit [pull requests](https://github.com/guepardoapps/30-seconds-of-c-sharp/pulls) with snippets you have created (see below for guidelines).
+- [Open issues](https://github.com/conplementAG/30-seconds-of-c-sharp/issues/new) for things you want to see added or modified.
+- Be part of the discussion by helping out with [existing issues](https://github.com/conplementAG/30-seconds-of-c-sharp/issues).
+- Submit [pull requests](https://github.com/conplementAG/30-seconds-of-c-sharp/pulls) with snippets you have created (see below for guidelines).
 - Fix typos in existing snippets, improve snippet descriptions and explanations or provide better examples.
 - **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
 ### Snippet submission and Pull request guidelines
 
-- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. We ([guepardoapps](https://www.github.com/guepardoapps/)) will update the `README.md` file when your pull request is merged.
+- **DO NOT MODIFY THE README.md FILE!** Make changes to individual snippet files. We ([conplementAG](https://www.conplement.de/)) will update the `README.md` file when your pull request is merged.
 - **Snippet filenames** must correspond to the title of the snippet and the topic it is connected to. For example, if your snippet is under the topic `### array` and is titled `### awesomeSnippet` the filename for should be `Array.AwesomeSnippet.cs` and the method name should be `AwesomeSnippet`.
   - Use `lowerCamelCase` for parameters and variables and `UpperCamelCase` for all other identifiers, not `kebab-case` or `snake_case`.
   -  Please follow the (dotnet)[https://docs.microsoft.com/en-US/dotnet/standard/design-guidelines/] guidelines.
