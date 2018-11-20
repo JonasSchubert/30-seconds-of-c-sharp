@@ -1,0 +1,28 @@
+FROM microsoft/dotnet:2.1-sdk
+WORKDIR /src
+
+COPY snippets/snippets.sln ./
+
+COPY snippets/Date/*.csproj ./snippets
+COPY snippets/Enumerable/*.csproj ./snippets
+COPY snippets/Math/*.csproj ./snippets
+COPY snippets/Method/*.csproj ./snippets
+COPY snippets/String/*.csproj ./snippets
+COPY snippets/Type/*.csproj ./snippets
+COPY snippets/Utility/*.csproj ./snippets
+
+COPY snippets/Date.Test/*.csproj ./snippets.Test/
+COPY snippets/Enumerable.Test/*.csproj ./snippets.Test/
+COPY snippets/Math.Test/*.csproj ./snippets.Test/
+COPY snippets/Method.Test/*.csproj ./snippets.Test/
+COPY snippets/String.Test/*.csproj ./snippets.Test/
+COPY snippets/Type.Test/*.csproj ./snippets.Test/
+COPY snippets/Utility.Test/*.csproj ./snippets.Test/
+
+RUN dotnet restore
+
+COPY . .
+WORKDIR /src/snippets/snippets.Test
+
+RUN dotnet build
+RUN dotnet test
