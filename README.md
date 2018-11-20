@@ -257,9 +257,9 @@ https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netfr
 ``` c#
 using System;
 
-namespace snippets.Date
+namespace conplement.snippets.Date
 {
-    public static partial class SnippetsDate
+    public static partial class Date
     {
         public static int DayOfYear()
         {
