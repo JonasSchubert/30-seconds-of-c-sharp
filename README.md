@@ -37,7 +37,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`any`](#any)
 * [`arrayToCsv`](#arrayToCsv)
 * [`bifurcate`](#bifurcate)
-* [`bifurcateBy`](#bifurcateBy)
 * [`bubbleSort`](#bubbleSort)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
@@ -536,25 +535,6 @@ Converts a 2D array to a comma-separated values (CSV) string.
 ### bifurcate
 
 Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### bifurcateBy
-
-Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
 
 ```c#
 // TODO
