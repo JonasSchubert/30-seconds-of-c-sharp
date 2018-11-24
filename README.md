@@ -1,6 +1,6 @@
 ![Logo](/logo.png)
 
-[![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=5)
+[![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=7)
 
 # 30 seconds of C#
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
