@@ -10,7 +10,7 @@ namespace Conplement.Snippets.Date.Test
         public void DayOfYear_ShouldReturnExpectedResult_ForToday()
         {
             // Arrange
-            var dayOfYearToday = DateTime.Now.DayOfYear;
+            var dayOfYearToday = DateTime.UtcNow.DayOfYear;
 
             // Act
             var snippetResult = Date.DayOfYear();
