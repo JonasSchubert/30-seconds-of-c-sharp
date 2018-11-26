@@ -2,7 +2,7 @@ using FluentAssertions;
 using System;
 using Xunit;
 
-namespace conplement.snippets.Date.Test
+namespace Conplement.Snippets.Date.Test
 {
     public class DateIsAfterDateUnitTest
     {
@@ -46,6 +46,38 @@ namespace conplement.snippets.Date.Test
 
             // Assert
             actual.Should().BeFalse();
+        }
+
+        [Fact]
+        public void IsAfterDate_ShouldThrowArgumentException_IfTimezonesDiffer_LocalUtc()
+        {
+            // Arrange
+            var dateTime1 = new DateTime(2018, 11, 21);
+            dateTime1 = DateTime.SpecifyKind(dateTime1, DateTimeKind.Local);
+            var dateTime2 = new DateTime(2018, 11, 22);
+            dateTime2 = DateTime.SpecifyKind(dateTime2, DateTimeKind.Utc);
+
+            // Act
+            Action action = () => dateTime1.IsAfterDate(dateTime2);
+
+            // Assert
+            action.Should().Throw<ArgumentException>("The DateTime values have to be in the same timezone! dateTime1 uses Local, while dateTime2 uses Utc!");
+        }
+
+        [Fact]
+        public void IsAfterDate_ShouldThrowArgumentException_IfTimezonesDiffer_UtcUnspecified()
+        {
+            // Arrange
+            var dateTime1 = new DateTime(2018, 11, 21);
+            dateTime1 = DateTime.SpecifyKind(dateTime1, DateTimeKind.Utc);
+            var dateTime2 = new DateTime(2018, 11, 22);
+            dateTime2 = DateTime.SpecifyKind(dateTime2, DateTimeKind.Unspecified);
+
+            // Act
+            Action action = () => dateTime1.IsAfterDate(dateTime2);
+
+            // Assert
+            action.Should().Throw<ArgumentException>("The DateTime values have to be in the same timezone! dateTime1 uses Utc, while dateTime2 uses Unspecified!");
         }
     }
 }
