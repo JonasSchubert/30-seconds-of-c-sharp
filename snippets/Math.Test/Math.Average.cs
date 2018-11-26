@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace conplement.snippets.Math.Test
+namespace Conplement.Snippets.Math.Test
 {
     public class MathAverageUnitTest
     {

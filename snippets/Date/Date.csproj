@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>conplement.snippets.Date</AssemblyName>
+    <AssemblyName>Conplement.Snippets.Date</AssemblyName>
     <Authors>Jonas Schubert</Authors>
     <Company>conplementAG</Company>
     <Description>A curated collection of useful C# snippets about dates that you can understand in 30 seconds or less.</Description>
@@ -13,6 +13,7 @@
     <Version>0.1.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryType>GIT</RepositoryType>
+    <RootNamespace>Conplement.Snippets.Date</RootNamespace>
   </PropertyGroup>
 
 </Project>

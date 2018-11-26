@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace conplement.snippets.Method
+namespace Conplement.Snippets.Method
 {
     /// <summary>
     /// Partial class for method snippets

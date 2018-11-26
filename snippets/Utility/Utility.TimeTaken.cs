@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace conplement.snippets.Utility
+namespace Conplement.Snippets.Utility
 {
     /// <summary>
     /// Partial class for utility snippets

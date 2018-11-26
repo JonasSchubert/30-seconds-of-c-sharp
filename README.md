@@ -34,7 +34,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <summary>View contents</summary>
 
 * [`allEqual`](#allEqual)
-* [`any`](#any)
 * [`arrayToCsv`](#arrayToCsv)
 * [`bifurcate`](#bifurcate)
 * [`bubbleSort`](#bubbleSort)
@@ -258,7 +257,7 @@ https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netfr
 ``` c#
 using System;
 
-namespace conplement.snippets.Date
+namespace Conplement.Snippets.Date
 {
     public static partial class Date
     {
@@ -274,7 +273,7 @@ namespace conplement.snippets.Date
 <summary>Examples</summary>
 
 ``` c#
-conplement.snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
+Conplement.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 ```
 
 </details>
@@ -478,25 +477,6 @@ Returns tomorrow's date.
 ### allEqual
 
 Check if all elements in an array are equal.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### any
-
-Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise.
 
 ```c#
 // TODO
@@ -784,7 +764,7 @@ Removes elements from the end of an array until the passed function returns `tru
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-namespace conplement.snippets.Enumerable
+namespace Conplement.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1065,7 +1045,7 @@ Returns all the elements of an array except the last one.
 Initializes a 2D array of given width and height and value.
 
 ```c#
-namespace conplement.snippets.Enumerable
+namespace Conplement.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -2252,7 +2232,7 @@ Linq documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.Math
+namespace Conplement.Snippets.Math
 {
     public static partial class Math
     {
@@ -2857,7 +2837,7 @@ Returns the number of times a function executed per second.
 Iterates over a callback `n` times
 
 ```c#
-namespace conplement.snippets.Method
+namespace Conplement.Snippets.Method
 {
     public static partial class Method
     {
@@ -3036,7 +3016,7 @@ Most other checks are already integrated into C#
 https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith?view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.String
+namespace Conplement.Snippets.String
 {
     public static partial class String
     {
@@ -3780,7 +3760,7 @@ Stopwatch documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.Utility
+namespace Conplement.Snippets.Utility
 {
     public static partial class Utility
     {
