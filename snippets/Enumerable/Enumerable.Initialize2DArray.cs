@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace conplement.snippets.Enumerable
+namespace Conplement.Snippets.Enumerable
 {
     /// <summary>
     /// Partial class for Enumerable snippets
