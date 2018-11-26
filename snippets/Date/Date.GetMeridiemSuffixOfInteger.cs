@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace conplement.snippets.Date
+namespace Conplement.Snippets.Date
 {
     /// <summary>
     /// Partial class for date snippets
@@ -10,11 +10,11 @@ namespace conplement.snippets.Date
         /// <summary>
         /// Converts an integer to a suffixed string, adding am or pm based on its value.
         /// </summary>
-        public static string GetMeridiumSuffixOfInteger(this int value)
+        public static string GetMeridiemSuffixOfInteger(this int value)
         {
             if (value < 0 || value > 24)
             {
-                throw new ArgumentOutOfRangeException($"Invalid value {value} in method {nameof(GetMeridiumSuffixOfInteger)}", nameof(value));
+                throw new ArgumentOutOfRangeException($"Invalid value {value} in method {nameof(GetMeridiemSuffixOfInteger)}", nameof(value));
             }
 
             return value == 0 || value == 24
