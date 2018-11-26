@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Xunit;
 
-namespace conplement.snippets.Enumerable.Test
+namespace Conplement.Snippets.Enumerable.Test
 {
     public class EnumerableBifurcateUnitTest
     {
