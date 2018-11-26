@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using Xunit;
 
-namespace conplement.snippets.Date.Test
+namespace Conplement.Snippets.Date.Test
 {
     public class DateGetColonTimeFromDateUnitTest
     {
