@@ -2,7 +2,7 @@ using FluentAssertions;
 using System;
 using Xunit;
 
-namespace conplement.snippets.Method.Test
+namespace Conplement.Snippets.Method.Test
 {
     public class MethodTimesUnitTest
     {

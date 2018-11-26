@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace conplement.snippets.String
+namespace Conplement.Snippets.String
 {
     /// <summary>
     /// Partial class for string snippets
