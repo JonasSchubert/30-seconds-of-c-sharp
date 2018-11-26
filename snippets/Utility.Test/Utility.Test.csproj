@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>conplement.snippets.Utility.Test</AssemblyName>
+    <AssemblyName>Conplement.Snippets.Utility.Test</AssemblyName>
 
-    <RootNamespace>conplement.snippets.Utility.Test</RootNamespace>
+    <RootNamespace>Conplement.Snippets.Utility.Test</RootNamespace>
 
     <Authors>Jonas Schubert</Authors>
 

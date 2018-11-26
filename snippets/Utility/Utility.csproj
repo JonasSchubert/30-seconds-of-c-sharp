@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>conplement.snippets.Utility</AssemblyName>
-    <RootNamespace>conplement.snippets.Utility</RootNamespace>
+    <AssemblyName>Conplement.Snippets.Utility</AssemblyName>
+    <RootNamespace>Conplement.Snippets.Utility</RootNamespace>
     <Version>0.1.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Jonas Schubert</Authors>
