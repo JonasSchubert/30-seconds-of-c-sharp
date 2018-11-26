@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>conplement.snippets.Date.Test</AssemblyName>
+    <AssemblyName>Conplement.Snippets.Date.Test</AssemblyName>
 
-    <RootNamespace>conplement.snippets.Date.Test</RootNamespace>
+    <RootNamespace>Conplement.Snippets.Date.Test</RootNamespace>
 
     <Authors>Jonas Schubert</Authors>
 
