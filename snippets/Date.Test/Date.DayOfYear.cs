@@ -2,7 +2,7 @@ using FluentAssertions;
 using System;
 using Xunit;
 
-namespace conplement.snippets.Date.Test
+namespace Conplement.Snippets.Date.Test
 {
     public class DateDayOfYearUnitTest
     {
