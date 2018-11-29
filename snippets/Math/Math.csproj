@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>conplement.snippets.Math</AssemblyName>
-    <RootNamespace>conplement.snippets.Math</RootNamespace>
+    <AssemblyName>Conplement.Snippets.Math</AssemblyName>
+    <RootNamespace>Conplement.Snippets.Math</RootNamespace>
     <Version>0.1.0</Version>
     <Authors>Jonas Schubert</Authors>
     <Company>conplementAG</Company>

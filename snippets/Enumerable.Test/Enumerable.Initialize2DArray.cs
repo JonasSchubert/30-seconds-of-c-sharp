@@ -2,7 +2,7 @@ using System;
 using FluentAssertions;
 using Xunit;
 
-namespace conplement.snippets.Enumerable.Test
+namespace Conplement.Snippets.Enumerable.Test
 {
     public class EnumerableInitialize2DArrayUnitTest
     {

@@ -1,5 +1,9 @@
 ![Logo](/logo.png)
 
+[![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=7)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 # 30 seconds of C#
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
 
@@ -32,10 +36,8 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <summary>View contents</summary>
 
 * [`allEqual`](#allEqual)
-* [`any`](#any)
 * [`arrayToCsv`](#arrayToCsv)
 * [`bifurcate`](#bifurcate)
-* [`bifurcateBy`](#bifurcateBy)
 * [`bubbleSort`](#bubbleSort)
 * [`chunk`](#chunk)
 * [`compact`](#compact)
@@ -257,7 +259,7 @@ https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netfr
 ``` c#
 using System;
 
-namespace conplement.snippets.Date
+namespace Conplement.Snippets.Date
 {
     public static partial class Date
     {
@@ -273,7 +275,7 @@ namespace conplement.snippets.Date
 <summary>Examples</summary>
 
 ``` c#
-conplement.snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
+Conplement.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 ```
 
 </details>
@@ -493,25 +495,6 @@ Check if all elements in an array are equal.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### any
-
-Returns `true` if the provided predicate function returns `true` for at least one element in a collection, `false` otherwise.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### arrayToCsv
 
 Converts a 2D array to a comma-separated values (CSV) string.
@@ -534,25 +517,6 @@ Converts a 2D array to a comma-separated values (CSV) string.
 ### bifurcate
 
 Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### bifurcateBy
-
-Splits values into two groups according to a predicate function, which specifies which group an element in the input collection belongs to. If the predicate function returns a truthy value, the collection element belongs to the first group; otherwise, it belongs to the second group.
 
 ```c#
 // TODO
@@ -802,7 +766,7 @@ Removes elements from the end of an array until the passed function returns `tru
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-namespace conplement.snippets.Enumerable
+namespace Conplement.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1083,7 +1047,7 @@ Returns all the elements of an array except the last one.
 Initializes a 2D array of given width and height and value.
 
 ```c#
-namespace conplement.snippets.Enumerable
+namespace Conplement.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -2270,7 +2234,7 @@ Linq documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.Math
+namespace Conplement.Snippets.Math
 {
     public static partial class Math
     {
@@ -2875,7 +2839,7 @@ Returns the number of times a function executed per second.
 Iterates over a callback `n` times
 
 ```c#
-namespace conplement.snippets.Method
+namespace Conplement.Snippets.Method
 {
     public static partial class Method
     {
@@ -3054,7 +3018,7 @@ Most other checks are already integrated into C#
 https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith?view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.String
+namespace Conplement.Snippets.String
 {
     public static partial class String
     {
@@ -3798,7 +3762,7 @@ Stopwatch documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
 
 ```c#
-namespace conplement.snippets.Utility
+namespace Conplement.Snippets.Utility
 {
     public static partial class Utility
     {

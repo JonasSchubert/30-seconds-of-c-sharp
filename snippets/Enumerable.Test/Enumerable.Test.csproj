@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>conplement.snippets.Enumerable.Test</AssemblyName>
+    <AssemblyName>Conplement.Snippets.Enumerable.Test</AssemblyName>
 
-    <RootNamespace>conplement.snippets.Enumerable.Test</RootNamespace>
+    <RootNamespace>Conplement.Snippets.Enumerable.Test</RootNamespace>
 
     <Authors>Jonas Schubert</Authors>
 
