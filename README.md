@@ -1,6 +1,8 @@
 ![Logo](/logo.png)
 
 [![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=7)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 # 30 seconds of C#
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
