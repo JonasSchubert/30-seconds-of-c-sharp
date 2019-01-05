@@ -306,14 +306,30 @@ Returns the human readable format of the given number of milliseconds.
 Returns a string of the form `HH:MM:SS` from a `DateTime` or `TimeSpan` object.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static string GetColonTimeFromDate(this DateTime dateTime)
+        {
+            return $"{dateTime.Hour.ToString("D2")}:{dateTime.Minute.ToString("D2")}:{dateTime.Second.ToString("D2")}";
+        }
+
+        public static string GetColonTimeFromDate(this TimeSpan timeSpan)
+        {
+            return $"{timeSpan.Hours.ToString("D2")}:{timeSpan.Minutes.ToString("D2")}:{timeSpan.Seconds.ToString("D2")}";
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new DateTime(2018, 11, 22, 17, 53, 23).GetColonTimeFromDate() # 17:53:23
+new DateTime(1990, 1, 2, 3, 41, 5).GetColonTimeFromDate() # 03:41:05
+new TimeSpan(1, 33, 7).GetColonTimeFromDate() # 01:33:07
 ```
 
 </details>
