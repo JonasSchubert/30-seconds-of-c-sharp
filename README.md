@@ -1,7 +1,7 @@
 ![Logo](/logo.png)
 
 [![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=7)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 # 30 seconds of C#
@@ -3829,6 +3829,7 @@ Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
 
 
 ## Contribute
+
 You're always welcome to contribute to this project. Please read the [contribution guide](CONTRIBUTING.md).
 
 ## License
