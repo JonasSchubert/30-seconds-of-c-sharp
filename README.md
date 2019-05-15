@@ -265,7 +265,7 @@ namespace Conplement.Snippets.Date
     {
         public static int DayOfYear()
         {
-            return DateTime.Now.DayOfYear;
+            return DateTime.UtcNow.DayOfYear;
         }
     }
 }
@@ -287,14 +287,43 @@ Conplement.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 Returns the human readable format of the given number of milliseconds.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static string FormatDuration(ulong milliseconds)
+        {
+            var dictionary = new Dictionary<string, Tuple<ulong, uint>>
+            {
+                { "week", new Tuple<ulong, uint>(7* 24 * 60 * 60 * 1000, int.MaxValue) },
+                { "day", new Tuple<ulong, uint>(24 * 60 * 60 * 1000, 7) },
+                { "hour", new Tuple<ulong, uint>(60 * 60 * 1000, 24) },
+                { "minute", new Tuple<ulong, uint>(60 * 1000, 60) },
+                { "second", new Tuple<ulong, uint>(1000, 60) },
+                { "millisecond", new Tuple<ulong, uint>(1, 1000) }
+            };
+
+            var stringArray = dictionary
+                .Select(item =>
+                    ((milliseconds / item.Value.Item1) % item.Value.Item2) > 0
+                    ? $"{((milliseconds / item.Value.Item1) % item.Value.Item2)} {item.Key}{(((milliseconds / item.Value.Item1) % item.Value.Item2) > 1 ? "s" : string.Empty)}"
+                    : string.Empty)
+                .Where(x => !string.IsNullOrEmpty(x))
+                .ToArray();
+
+            return stringArray.Length > 0
+                ? string.Join(", ", stringArray)
+                : "0 millisecond";
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var actual = Date.FormatDuration(34325055574ul); # "56 weeks, 5 days, 6 hours, 44 minutes, 15 seconds, 574 milliseconds"
 ```
 
 </details>
@@ -340,15 +369,31 @@ new TimeSpan(1, 33, 7).GetColonTimeFromDate() # 01:33:07
 
 Returns the difference (in days) between two dates.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static double GetDaysDiffBetweenDates(DateTime dateTime1, DateTime dateTime2)
+        {
+            if (dateTime1.Kind != dateTime2.Kind)
+            {
+                throw new ArgumentException($"The DateTime values have to be in the same timezone! {nameof(dateTime1)} uses {dateTime1.Kind}, while {nameof(dateTime2)} uses {dateTime2.Kind}!");
+            }
+
+            return (dateTime1 - dateTime2).TotalDays;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+Date.GetDaysDiffBetweenDates(new DateTime(2018, 11, 22), new DateTime(2018, 11, 14)); # 8.0
 ```
 
 </details>
@@ -359,15 +404,38 @@ Returns the difference (in days) between two dates.
 
 Converts an integer to a suffixed string, adding `am` or `pm` based on its value.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static string GetMeridiemSuffixOfInteger(this int value)
+        {
+            if (value < 0 || value > 24)
+            {
+                throw new ArgumentOutOfRangeException($"Invalid value {value} in method {nameof(GetMeridiemSuffixOfInteger)}", nameof(value));
+            }
+
+            return value == 0 || value == 24
+                ? "12am" : value == 12
+                    ? "12pm" : value < 12
+                        ? $"{value % 12}am" : $"{value % 12}pm";
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+0.GetMeridiemSuffixOfInteger(); # 12am
+11.GetMeridiemSuffixOfInteger(); # 11am
+13.GetMeridiemSuffixOfInteger(); # 1pm
+18.GetMeridiemSuffixOfInteger(); # 6pm
+24.GetMeridiemSuffixOfInteger(); # 12am
 ```
 
 </details>
@@ -378,15 +446,31 @@ Converts an integer to a suffixed string, adding `am` or `pm` based on its value
 
 Check if a date is after another date.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static bool IsAfterDate(this DateTime dateTime1, DateTime dateTime2)
+        {
+            if (dateTime1.Kind != dateTime2.Kind)
+            {
+                throw new ArgumentException($"The DateTime values have to be in the same timezone! {nameof(dateTime1)} uses {dateTime1.Kind}, while {nameof(dateTime2)} uses {dateTime2.Kind}!");
+            }
+
+            return dateTime1 > dateTime2;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+DateTime(2018, 11, 21).IsAfterDate(new DateTime(2018, 11, 22)) # false
 ```
 
 </details>
@@ -397,15 +481,31 @@ Check if a date is after another date.
 
 Check if a date is before another date.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static bool IsBeforeDate(this DateTime dateTime1, DateTime dateTime2)
+        {
+            if (dateTime1.Kind != dateTime2.Kind)
+            {
+                throw new ArgumentException($"The DateTime values have to be in the same timezone! {nameof(dateTime1)} uses {dateTime1.Kind}, while {nameof(dateTime2)} uses {dateTime2.Kind}!");
+            }
+
+            return dateTime1 < dateTime2;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+DateTime(2018, 11, 21).IsBeforeDate(new DateTime(2018, 11, 22)) # true
 ```
 
 </details>
@@ -417,14 +517,24 @@ Check if a date is before another date.
 Check if a date is the same as another date.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static bool IsSameDate(this DateTime dateTime1, DateTime dateTime2)
+        {
+            return dateTime1 == dateTime2 && dateTime1.Kind == dateTime2.Kind;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var actual = new DateTime(2018, 11, 26).IsSameDate(new DateTime(2018, 11, 26)); # true
+var actual = new DateTime(203940201L).IsSameDate(new DateTime(203940202L)); # false
 ```
 
 </details>
@@ -436,14 +546,34 @@ Check if a date is the same as another date.
 Returns the maximum of the given dates.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static DateTime MaxDate(params DateTime[] dateTimeList)
+        {
+            if (dateTimeList == null || !dateTimeList.Any())
+            {
+                throw new ArgumentException("The dateTimeList may not be empty!", nameof(dateTimeList));
+            }
+
+            if (!dateTimeList.All(x => dateTimeList.First().Kind == x.Kind))
+            {
+                throw new ArgumentException("All params have to have the same timezone!", nameof(dateTimeList));
+            }
+
+            return dateTimeList.Max();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+DateTime[] list = { new DateTime(2018, 11, 27, 22, 2, 15), new DateTime(2018, 11, 27, 22, 2, 15), new DateTime(2018, 11, 27), new DateTime(2019) };
+var actual = Date.MaxDate(list); # new DateTime(2019)
 ```
 
 </details>
@@ -455,14 +585,34 @@ Returns the maximum of the given dates.
 Returns the minimum of the given dates.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static DateTime MinDate(params DateTime[] dateTimeList)
+        {
+            if (dateTimeList == null || !dateTimeList.Any())
+            {
+                throw new ArgumentException("The dateTimeList may not be empty!", nameof(dateTimeList));
+            }
+
+            if (!dateTimeList.All(x => dateTimeList.First().Kind == x.Kind))
+            {
+                throw new ArgumentException("All params have to have the same timezone!", nameof(dateTimeList));
+            }
+
+            return dateTimeList.Min();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+DateTime[] list = { new DateTime(2018, 11, 27, 22, 2, 15), new DateTime(2018, 11, 27, 22, 2, 15), new DateTime(2018, 11, 27), new DateTime(2018) };
+var actual = Date.MinDate(list); # new DateTime(2018)
 ```
 
 </details>
@@ -474,14 +624,27 @@ Returns the minimum of the given dates.
 Returns tomorrow's date.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Date
+{
+    public static partial class Date
+    {
+        public static DateTime Tomorrow(DateTimeKind dateTimeKind = DateTimeKind.Utc)
+        {
+            return (dateTimeKind == DateTimeKind.Local
+                ? DateTime.Now
+                : DateTime.UtcNow)
+                + TimeSpan.FromDays(1);
+            // Instead of TimeSpan you can also use https://github.com/conplementAG/FluentTimeSpan to add one day like tomorrow = DateTime.UtcNow + 1.Days()
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var actual = Date.Tomorrow(DateTimeKind.Local); # If today is 15.05.2019, it will return 16.05.2019
 ```
 
 </details>
@@ -496,15 +659,48 @@ Returns tomorrow's date.
 
 Check if all elements in an array are equal.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static bool AllEqual<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            var testList = enumerable.ToList();
+            if (testList.Count <= 1)
+            {
+                return true;
+            }
+
+            var compareObject = testList[0];
+            for (int index = 0; index < testList.Count; index++)
+            {
+                var entry = testList[index];
+                if ((entry == null || !entry.Equals(compareObject))
+                    && !(entry == null && compareObject == null))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new double[] { 1.25, 1.25, 1.5, -1.5 }.AllEqual(); # false
 ```
 
 </details>
@@ -534,15 +730,43 @@ Converts a 2D array to a comma-separated values (CSV) string.
 
 Splits values into two groups. If an element in `filter` is truthy, the corresponding element in the collection belongs to the first group; otherwise, it belongs to the second group.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static (IEnumerable<T>, IEnumerable<T>) Bifurcate<T>(this IEnumerable<T> list, Func<T, bool> filter)
+        {
+            if (list == null)
+            {
+                throw new ArgumentNullException(nameof(list));
+            }
+
+            if (filter == null)
+            {
+                throw new ArgumentNullException(nameof(filter));
+            }
+
+            IEnumerable<T> enumerable1 = list.Where(filter);
+            IEnumerable<T> enumerable2 = list.Where(x => !enumerable1.Any(y => y.Equals(x)));
+
+            return (enumerable1, enumerable2);
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+var list = new List<int>
+{
+    1, 2, 3, 4, 1
+};
+(IEnumerable<int> actual1, IEnumerable<int> actual2) = list.Bifurcate(x => x > 1); # actual1 has three entries (2, 3, 4), actual2 has two entries (1, 1)
 ```
 
 </details>
@@ -725,14 +949,33 @@ Filters out all values from an array for which the comparator function does not 
 Returns a new array with `n` elements removed from the left.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> Drop<T>(this IEnumerable<T> enumerable, uint dropCount)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (enumerable.Count() < dropCount)
+            {
+                throw new ArgumentOutOfRangeException(nameof(enumerable));
+            }
+
+            return enumerable.Skip((int)dropCount);
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var enumerable = new bool[] { false, false, true, true }.Drop(3); # List with one entry: true
 ```
 
 </details>
@@ -3828,14 +4071,31 @@ Adds an ordinal suffix to a number.
 Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Utility
+{
+    public static partial class Utility
+    {
+        public static bool YesNo(this string test, bool defaultVal = false)
+        {
+            return new Regex(@"^(y|yes)$", RegexOptions.IgnoreCase).IsMatch(test)
+                ? true
+                : new Regex(@"^(n|no)$", RegexOptions.IgnoreCase).IsMatch(test)
+                    ? false
+                    : defaultVal;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var empty = "".YesNo(); # false
+var yes = "yes".YesNo(); # true
+var y = "y".YesNo(); # true
+var NO = "NO".YesNo(); # false
+var nO = "nO".YesNo(); # false
 ```
 
 </details>
