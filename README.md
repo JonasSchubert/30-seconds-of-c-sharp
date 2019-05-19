@@ -987,14 +987,33 @@ var enumerable = new bool[] { false, false, true, true }.Drop(3); # List with on
 Returns a new array with `n` elements removed from the right.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> Drop<T>(this IEnumerable<T> enumerable, uint dropCount)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (enumerable.Count() < dropCount)
+            {
+                throw new ArgumentOutOfRangeException(nameof(enumerable));
+            }
+
+            return enumerable.Take(enumerable.Count() - (int)dropCount);
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var enumerable = new bool[] { false, false, true, true }.DropRight(3); # List with one entry: false
 ```
 
 </details>
