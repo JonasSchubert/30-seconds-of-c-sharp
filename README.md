@@ -942,17 +942,33 @@ new List<int> { 1, 2, 3, 2, 1 }.CountBy(); # new Dictionary<int, uint> { { 1, 2u
 
 ### countOccurrences
 
-Counts the occurrences of a value in an array.
+Counts the occurrences of a value in an enumerable.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static int CountOccurences<T>(this IEnumerable<T> enumerable, T value)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            return enumerable.Count(x => x.Equals(value));
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new string[] { "Hello", "Hello", "Hello", "World", "Hello", "", string.Empty }.CountOccurences("Hello"); # 4
 ```
 
 </details>
