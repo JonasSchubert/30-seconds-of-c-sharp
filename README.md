@@ -888,17 +888,52 @@ var enumerable = new List<object> { new object(), null, new object(), new object
 
 ### countBy
 
-Groups the elements of an array based on the given function and returns the count of elements in each group.
+Groups the elements of an enumerable based on the given function and returns the count of elements in each group as dictionary, objects as key and count of object as value (uint). Elements may not be null!
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IDictionary<T, uint> CountBy<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            var dictionary = new Dictionary<T, uint>();
+
+            foreach (var key in enumerable)
+            {
+                if (key == null)
+                {
+                    throw new ArgumentNullException(nameof(key));
+                }
+
+                if (dictionary.ContainsKey(key))
+                {
+                    dictionary[key]++;
+                }
+                else
+                {
+                    dictionary.Add(key, 1u);
+                }
+            }
+
+            return dictionary;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new List<int> { 1, 2, 3, 2, 1 }.CountBy(); # new Dictionary<int, uint> { { 1, 2u }, { 2, 2u }, { 3, 1u } };
 ```
 
 </details>
