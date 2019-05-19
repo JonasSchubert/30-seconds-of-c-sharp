@@ -1025,14 +1025,49 @@ var enumerable = new bool[] { false, false, true, true }.DropRight(3); # List wi
 Removes elements from the end of an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> DropRightWhile<T>(this IEnumerable<T> enumerable, Func<T, bool> filter)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (filter == null)
+            {
+                throw new ArgumentNullException(nameof(filter));
+            }
+
+            var reachedDropPoint = false;
+
+            for (var index = enumerable.Count() - 1; index >= 0; index--)
+            {
+                var element = enumerable.ElementAt(index);
+
+                if (!reachedDropPoint && !filter(element))
+                {
+                    continue;
+                }
+
+                reachedDropPoint = true;
+
+                yield return element;
+            }
+
+            yield break;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var enumerable = new int[] { 1, 2, 3, 4, 1 }.DropRightWhile(x => x > 2); # List with four entries: new List<int> { 1, 2, 3, 4 }
 ```
 
 </details>

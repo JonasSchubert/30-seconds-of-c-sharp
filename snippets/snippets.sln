@@ -1,39 +1,39 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2048
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conplement.Snippets", "Conplement.Snippets", "{E8D0D684-D155-4D0C-8D05-9EFCD9E8DEF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Conplement.Snippets.Test", "Conplement.Snippets.Test", "{9313FA9C-E009-4112-81ED-ED3140445266}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerable", "Enumerable\Enumerable.csproj", "{39FE51D8-3956-4405-A99B-D2F762AFC38E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerable", "Enumerable\Enumerable.csproj", "{39FE51D8-3956-4405-A99B-D2F762AFC38E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Date", "Date\Date.csproj", "{93CFF685-43D9-4AB5-A4A9-B0FEC00FC75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Date", "Date\Date.csproj", "{93CFF685-43D9-4AB5-A4A9-B0FEC00FC75B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math", "Math\Math.csproj", "{A6645169-AE44-419D-BE75-9BF3812068C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Math", "Math\Math.csproj", "{A6645169-AE44-419D-BE75-9BF3812068C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method", "Method\Method.csproj", "{73CC6F02-97D0-49B4-8EBB-01FDFE73D5C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Method", "Method\Method.csproj", "{73CC6F02-97D0-49B4-8EBB-01FDFE73D5C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String", "String\String.csproj", "{5150C636-638F-4E29-9D5C-576F640C6959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String", "String\String.csproj", "{5150C636-638F-4E29-9D5C-576F640C6959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Type", "Type\Type.csproj", "{6EF312B5-1ABF-41CC-A051-D647BF836F28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Type", "Type\Type.csproj", "{6EF312B5-1ABF-41CC-A051-D647BF836F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{B9A4D2DD-C367-4065-94E0-C1BD3A885E65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility", "Utility\Utility.csproj", "{B9A4D2DD-C367-4065-94E0-C1BD3A885E65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Date.Test", "Date.Test\Date.Test.csproj", "{3273FD40-D818-4D93-8A72-C97C2BAE4873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Date.Test", "Date.Test\Date.Test.csproj", "{3273FD40-D818-4D93-8A72-C97C2BAE4873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enumerable.Test", "Enumerable.Test\Enumerable.Test.csproj", "{BF67A690-7B43-447F-A0D7-FAA6B2942FF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enumerable.Test", "Enumerable.Test\Enumerable.Test.csproj", "{BF67A690-7B43-447F-A0D7-FAA6B2942FF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Test", "Math.Test\Math.Test.csproj", "{B2194B86-BDC9-42BA-A201-86292B0830B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Math.Test", "Math.Test\Math.Test.csproj", "{B2194B86-BDC9-42BA-A201-86292B0830B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Method.Test", "Method.Test\Method.Test.csproj", "{65150480-20A4-4F59-A17E-AE5ED0B7A7F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Method.Test", "Method.Test\Method.Test.csproj", "{65150480-20A4-4F59-A17E-AE5ED0B7A7F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String.Test", "String.Test\String.Test.csproj", "{C9E5C2E4-B499-41DE-87E5-1FE5C62FE7C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "String.Test", "String.Test\String.Test.csproj", "{C9E5C2E4-B499-41DE-87E5-1FE5C62FE7C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Type.Test", "Type.Test\Type.Test.csproj", "{233D97D1-6366-4D3E-8157-0C0AC5AFD7EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Type.Test", "Type.Test\Type.Test.csproj", "{233D97D1-6366-4D3E-8157-0C0AC5AFD7EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility.Test", "Utility.Test\Utility.Test.csproj", "{5DAC114D-C90B-4106-A164-F3BD9BED0BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utility.Test", "Utility.Test\Utility.Test.csproj", "{5DAC114D-C90B-4106-A164-F3BD9BED0BE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
