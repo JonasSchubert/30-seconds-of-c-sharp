@@ -816,14 +816,70 @@ Chunks an array into smaller arrays of a specified size.
 Removes invalid values from an array.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> Compact<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (!enumerable.Any())
+            {
+                yield break; ;
+            }
+
+            foreach (var element in enumerable)
+            {
+
+                switch (element)
+                {
+                    case string y:
+                        if (string.IsNullOrEmpty(y))
+                        {
+                            continue;
+                        }
+                        yield return element;
+                        break;
+                    case bool y:
+                        if (!y)
+                        {
+                            continue;
+                        }
+                        yield return element;
+                        break;
+                    case byte y:
+                        if (y == 0)
+                        {
+                            continue;
+                        }
+                        yield return element;
+                        break;
+						
+						// ... more definitions necessary, Please have a look into the code
+						
+                    default:
+                        if (element == null)
+                        {
+                            continue;
+                        }
+                        yield return element;
+                        break;
+                }
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var enumerable = new List<object> { new object(), null, new object(), new object(), null, false, true, 1, 0, "Hello", "", "World" }.Compact(); # List with seven entries: new List<object> { new object(), new object(), new object(), true, 1, "Hello", "World" };
 ```
 
 </details>
