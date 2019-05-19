@@ -829,7 +829,7 @@ namespace Conplement.Snippets.Enumerable
 
             if (!enumerable.Any())
             {
-                yield break; ;
+                yield break;
             }
 
             foreach (var element in enumerable)
@@ -859,7 +859,7 @@ namespace Conplement.Snippets.Enumerable
                         yield return element;
                         break;
 						
-						// ... more definitions necessary, Please have a look into the code
+			// ... more definitions necessary, Please have a look into the code
 						
                     default:
                         if (element == null)
