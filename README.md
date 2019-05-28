@@ -45,8 +45,8 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`countOccurences`](#countOccurences)
 * [`deepFlatten`](#deepflatten)
 * [`difference`](#difference)
-* [`differenceBy`](#differenceBy)
-* [`differenceWith`](#differenceWith)
+* [`differenceSelect`](#differenceSelect)
+* [`differenceWhere`](#differenceWhere)
 * [`drop`](#drop)
 * [`dropRight`](#dropRight)
 * [`dropRightWhile`](#dropRightWhile)
@@ -996,55 +996,125 @@ Deep flattens an array of arrays.
 
 ### difference
 
-Returns the difference between two arrays.
+Returns the difference between two enumerables.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static IEnumerable<T> Difference<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2)
+    {
+        if (enumerable1 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable1));
+        }
+
+        if (enumerable2 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable2));
+        }
+
+        return enumerable1.Where(x => !enumerable2.Any(y => x.Equals(y))).Concat(enumerable2.Where(x => !enumerable1.Any(y => x.Equals(y))));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new List<int>{ 1, 2, 3, 4, 0}.Difference(new List<int>{ 1, 5, 3, 4, 1 }); # new List<int>{ 2, 0, 5}
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### differenceBy
+### differenceSelect
 
-Returns the difference between two arrays, after applying the provided function to each array element of both.
+Returns the difference between two enumerables, after applying the provided function to each enumerable element of both.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static IEnumerable<K> DifferenceSelect<T, K>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, K> selectFunction)
+    {
+        if (enumerable1 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable1));
+        }
+
+        if (enumerable2 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable2));
+        }
+
+        if (selectFunction == null)
+        {
+            throw new ArgumentNullException(nameof(selectFunction));
+        }
+
+        var selectedEnumerable1 = enumerable1.Select(selectFunction);
+        var selectedEnumerable2 = enumerable2.Select(selectFunction);
+
+        return selectedEnumerable1.Where(x => !selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => !selectedEnumerable1.Any(y => x.Equals(y))));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new List<int>{ 1, 2, 3, 4, 0}.DifferenceSelect(new List<int>{ 1, 5, 3, 4, 1 }, x => x); # new List<int>{ 2, 0, 5}
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### differenceWith
+### differenceWhere
 
 Filters out all values from an array for which the comparator function does not return `true`.
 
-```c#
-// TODO
+``` c#
+using System;
+
+namespace Conplement.Snippets.Enumerable
+{
+    public static IEnumerable<T> DifferenceWhere<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, bool> whereFunction)
+    {
+        if (enumerable1 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable1));
+        }
+
+        if (enumerable2 == null)
+        {
+            throw new ArgumentNullException(nameof(enumerable2));
+        }
+
+        if (whereFunction == null)
+        {
+            throw new ArgumentNullException(nameof(whereFunction));
+        }
+
+        var selectedEnumerable1 = enumerable1.Where(whereFunction);
+        var selectedEnumerable2 = enumerable2.Where(whereFunction);
+
+        return selectedEnumerable1.Where(x => !selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => !selectedEnumerable1.Any(y => x.Equals(y))));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
-```c#
-// TODO
+``` c#
+new List<int>{ 1, 2, 3, 4, 0}.DifferenceWhere(new List<int>{ 1, 5, 3, 4, 1 }, x => x > 1); # new List<int>{ 2, 5}
 ```
 
 </details>
