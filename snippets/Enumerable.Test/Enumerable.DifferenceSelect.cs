@@ -132,7 +132,7 @@ namespace Conplement.Snippets.Enumerable.Test
             actual.Should().NotBeNull();
             actual.Count().Should().Be(2);
             actual.ElementAt(0).Should().Be("T");
-            actual.ElementAt(0).Should().Be("T");
+            actual.ElementAt(1).Should().Be("T");
         }
 
         [Fact]
