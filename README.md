@@ -1432,14 +1432,33 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "organisation"
 Returns the last element for which the provided function returns a truthy value.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static T FindLast<T>(this IEnumerable<T> enumerable, Func<T, bool> whereFunction)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            return enumerable.Where(whereFunction).Reverse().FirstOrDefault();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int> { 1, 2, 3, 4, 0 }.FindLast(x => x % 4 == 0 && x != 0); # 4
 ```
 
 </details>
