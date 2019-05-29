@@ -1305,17 +1305,39 @@ new List<int>{ 1, 2, 3, 4, 1}.DropWhile(x => x => x > 2); # new List<int> { 3, 4
 
 ### everyNth
 
-Returns every nth element in an array.
+Returns every nth element in an enumerable.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> EveryNth<T>(this IEnumerable<T> enumerable, uint nth)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (nth == 0u)
+            {
+                throw new ArgumentNullException(nameof(nth));
+            }
+
+            for (var index = nth - 1; index < enumerable.Count(); index += nth)
+            {
+                yield return enumerable.ElementAt((int)index);
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int>{ 1, 2, 3, 4, 1}.EveryNth(3u); # new List<int> { 3 }
 ```
 
 </details>
