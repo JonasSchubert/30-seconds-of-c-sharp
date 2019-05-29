@@ -6,25 +6,25 @@ using Xunit;
 
 namespace Conplement.Snippets.Enumerable.Test
 {
-    public class EnumerableEveryNthUnitTest
+    public class EnumerableFilterNonUniqueWhereUnitTest
     {
         private static readonly Person person1 = new Person { Name = "Name1" };
         private static readonly Person person2 = new Person { Name = "Name1" };
 
         public static readonly IEnumerable<object[]> TestMemberData = new[] {
-                new object[] { new List<object> { 1u, 2u, 3u, 4u, 0u, 1u }, 4, new List<object> { 4u } },
-                new object[] { new List<object> { 1, 2, 3, 4, 0 }, 1, new List<object> { 1, 2, 3, 4, 0 } },
-                new object[] { new object[] { "Hello", "world", "organisation", "seconds", "of" }, 2, new object[] { "world", "seconds" } },
-                new object[] { new object[] { false, true }, 3, new object[] { } },
-                new object[] { new object[] { person1, person2, person1, person2, person1, person2, person1, person2 }, 5, new object[] { person1 } },
+                new object[] { new List<object> { null, 1u, 2u, 3u, 4u, 0u, 1u }, new List<object> { 2u, 3u, 4u, 0u } },
+                new object[] { new List<object> { 1, 2, 3, null, 4, 0 }, new List<object> { 1, 2, 3, 4, 0 } },
+                new object[] { new object[] { "Hello", null, "world", "organisation", "seconds", "of", "organisation" }, new object[] { "Hello", "world", "seconds", "of" } },
+                new object[] { new object[] { false, true, null, false }, new object[] { true } },
+                new object[] { new object[] { person1, null, person1, person2, person2 }, new object[] { } },
             };
 
         [Theory]
         [MemberData(nameof(TestMemberData))]
-        public void ReturnExpectedEnumerable(IEnumerable<object> enumerable, uint nth, IEnumerable<object> expected)
+        public void ReturnExpectedEnumerable(IEnumerable<object> enumerable, IEnumerable<object> expected)
         {
             // Arrange & Act
-            var actual = enumerable.EveryNth(nth);
+            var actual = enumerable.FilterNonUniqueWhere(x => x != null);
 
             // Assert
             actual.Count().Should().Be(expected.Count());
@@ -41,20 +41,20 @@ namespace Conplement.Snippets.Enumerable.Test
             double[] array = null;
 
             // Act
-            Action action = () => array.EveryNth(1).ToList();
+            Action action = () => array.FilterNonUniqueWhere(x => x == 0).ToList();
 
             // Assert
             action.Should().Throw<ArgumentNullException>();
         }
 
         [Fact]
-        public void ShouldThrowException_WhenNullNth_IsGiven()
+        public void ShouldThrowException_WhenNullWhereFunction_IsGiven()
         {
             // Arrange
-            double[] array = { 1, 2, 3, 4, 5, 6 };
+            var list = new List<uint> { 1, 2, 3, 4 };
 
             // Act
-            Action action = () => array.EveryNth(0u).ToList();
+            Action action = () => list.FilterNonUniqueWhere(null).ToList();
 
             // Assert
             action.Should().Throw<ArgumentNullException>();
