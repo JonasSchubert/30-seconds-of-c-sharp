@@ -21,12 +21,13 @@ namespace Conplement.Snippets.Enumerable.Test
 
         [Theory]
         [MemberData(nameof(TestMemberData))]
-        public void ReturnTrue_ForListsOfInt_IfHasDuplicates(IEnumerable<object> enumerable, uint nth, IEnumerable<object> expected)
+        public void ReturnExpectedEnumerable(IEnumerable<object> enumerable, uint nth, IEnumerable<object> expected)
         {
             // Arrange & Act
             var actual = enumerable.EveryNth(nth);
 
             // Assert
+            actual.Count().Should().Be(expected.Count());
             for (var index = 0; index < actual.Count(); index++)
             {
                 actual.ElementAt(index).Should().Be(expected.ElementAt(index));
