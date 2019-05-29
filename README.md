@@ -1346,7 +1346,7 @@ new List<int>{ 1, 2, 3, 4, 1}.EveryNth(3u); # new List<int> { 3 }
 
 ### filterNonUnique
 
-Filters out the non-unique values in an enumerable.
+Filters out the non-unique not null values in an enumerable.
 
 ```c#
 namespace Conplement.Snippets.Enumerable
@@ -1362,7 +1362,7 @@ namespace Conplement.Snippets.Enumerable
 
             for (var index = 0; index < enumerable.Count(); index++)
             {
-                if (enumerable.Where(x => x.Equals(enumerable.ElementAt(index))).Count() == 1)
+                if (enumerable.Where(x => x != null && x.Equals(enumerable.ElementAt(index))).Count() == 1)
                 {
                     yield return enumerable.ElementAt(index);
                 }
@@ -1385,7 +1385,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "organisation"
 
 ### filterNonUniqueBy
 
-Filters out the non-unique values in an enumerable, based on a provided comparator function (where linq statement).
+Filters out the non-unique not null values in an enumerable, based on a provided comparator function (where linq statement).
 
 ```c#
 namespace Conplement.Snippets.Enumerable
@@ -1406,7 +1406,7 @@ namespace Conplement.Snippets.Enumerable
 
             for (var index = 0; index < enumerable.Count(); index++)
             {
-                if (enumerable.Where(whereFunction).Where(x => x.Equals(enumerable.ElementAt(index))).Count() == 1)
+                if (enumerable.Where(whereFunction).Where(x => x != null && x.Equals(enumerable.ElementAt(index))).Count() == 1)
                 {
                     yield return enumerable.ElementAt(index);
                 }

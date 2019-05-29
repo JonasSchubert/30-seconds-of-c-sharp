@@ -10,7 +10,7 @@ namespace Conplement.Snippets.Enumerable
     public static partial class Enumerable
     {
         /// <summary>
-        /// Filters out the non-unique values in an enumerable.
+        /// Filters out the non-unique not null values in an enumerable.
         /// </summary>
         public static IEnumerable<T> FilterNonUnique<T>(this IEnumerable<T> enumerable)
         {
@@ -21,7 +21,7 @@ namespace Conplement.Snippets.Enumerable
 
             for (var index = 0; index < enumerable.Count(); index++)
             {
-                if (enumerable.Where(x => x.Equals(enumerable.ElementAt(index))).Count() == 1)
+                if (enumerable.Where(x => x != null && x.Equals(enumerable.ElementAt(index))).Count() == 1)
                 {
                     yield return enumerable.ElementAt(index);
                 }
