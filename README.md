@@ -1346,17 +1346,37 @@ new List<int>{ 1, 2, 3, 4, 1}.EveryNth(3u); # new List<int> { 3 }
 
 ### filterNonUnique
 
-Filters out the non-unique values in an array.
+Filters out the non-unique values in an enumerable.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> FilterNonUnique<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            for (var index = 0; index < enumerable.Count(); index++)
+            {
+                if (enumerable.Where(x => x.Equals(enumerable.ElementAt(index))).Count() == 1)
+                {
+                    yield return enumerable.ElementAt(index);
+                }
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of", "organisation" }.FilterNonUnique(); # new string[] { "Hello", "world", "seconds", "of" }
 ```
 
 </details>
