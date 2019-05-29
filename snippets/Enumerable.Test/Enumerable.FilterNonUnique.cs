@@ -17,6 +17,7 @@ namespace Conplement.Snippets.Enumerable.Test
                 new object[] { new object[] { "Hello", "world", "organisation", "seconds", "of", "organisation" }, new object[] { "Hello", "world", "seconds", "of" } },
                 new object[] { new object[] { false, true, false }, new object[] { true } },
                 new object[] { new object[] { person1, person1, person2, person2 }, new object[] { } },
+                new object[] { new object[] { null, 3.4, 3.1, 3.4 }, new object[] { 3.1 } },
             };
 
         [Theory]
