@@ -1457,17 +1457,27 @@ Groups the elements of an array based on the given function.
 
 ### hasDuplicates
 
-Checks an array for duplicate values. Returns true if duplicate values exist and false if values are all unique.
+Checks an enumerable for duplicate values. Returns true if duplicate values exist and false if values are all unique.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static bool HasDuplicates<T>(this IEnumerable<T> enumerable) =>
+            enumerable == null
+                ? throw new ArgumentNullException(nameof(enumerable))
+                : enumerable.Count() != enumerable.Distinct().Count();
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<uint> { 1u, 2u, 3u, 4u, 0u, 1u }.HasDuplicates(); # true
+new string[] { "Hello", "world", "organisation", "seconds", "of" }; # false
 ```
 
 </details>
