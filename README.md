@@ -58,7 +58,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`findLastIndex`](#findLastIndex)
 * [`flatten`](#flatten)
 * [`forEachRight`](#forEachRight)
-* [`groupBy`](#groupBy)
 * [`hasDuplicates`](#hasDuplicates)
 * [`indexOfAll`](#indexOfAll)
 * [`initial`](#initial)
@@ -1572,25 +1571,6 @@ namespace Conplement.Snippets.Enumerable
 ```c#
 var testString = "";
 new string[] { "world", "Hello" }.ForEachRight((string x) => testString = testString + " " + x); # " Hello world"
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### groupBy
-
-Groups the elements of an array based on the given function.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
