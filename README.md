@@ -60,7 +60,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`forEachRight`](#forEachRight)
 * [`groupBy`](#groupBy)
 * [`hasDuplicates`](#hasDuplicates)
-* [`head`](#head)
 * [`indexOfAll`](#indexOfAll)
 * [`initial`](#initial)
 * [`initialize2DArray`](#initialize2DArray)
@@ -1621,25 +1620,6 @@ namespace Conplement.Snippets.Enumerable
 ```c#
 new List<uint> { 1u, 2u, 3u, 4u, 0u, 1u }.HasDuplicates(); # true
 new string[] { "Hello", "world", "organisation", "seconds", "of" }; # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### head
-
-Returns the head of a list.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
