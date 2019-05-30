@@ -1468,16 +1468,50 @@ new List<int> { 1, 2, 3, 4, 0 }.FindLast(x => x % 4 == 0 && x != 0); # 4
 ### findLastIndex
 
 Returns the index of the last element for which the provided function returns a truthy value.
+Returns -1 if nothing found at all.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static int FindLastIndex<T>(this IEnumerable<T> enumerable, Func<T, bool> whereFunction)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var foundElement = enumerable.Where(whereFunction).Reverse().FirstOrDefault();
+            if (foundElement == null)
+            {
+                return -1;
+            }
+
+            for (var index = enumerable.Count() - 1; index > -1; index--)
+            {
+                if (enumerable.ElementAt(index).Equals(foundElement))
+                {
+                    return index;
+                }
+            }
+
+            throw new InvalidOperationException(nameof(FindLastIndex));
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int> { 1, 2, 3, 4, 0 }.FindLastIndex(x => x % 4 == 0 && x != 0); # 3
 ```
 
 </details>
