@@ -72,7 +72,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`isSorted`](#isSorted)
 * [`join`](#join)
 * [`jsonToCsv`](#jsonToCsv)
-* [`last`](#last)
 * [`longestItem`](#longestItem)
 * [`maxN`](#maxN)
 * [`minN`](#minN)
@@ -1970,25 +1969,6 @@ Uses a separator and an end separator.
 ### jsonToCsv ![advanced](/advanced.svg)
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### last
-
-Returns the last element in an array.
 
 ```c#
 // TODO
