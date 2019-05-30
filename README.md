@@ -1539,17 +1539,40 @@ Flattens an array up to the specified depth.
 
 ### forEachRight
 
-Executes a provided function once for each array element, starting from the array's last element.
+Executes a provided function once for each enumerable element, starting from the enumerable's last element.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static void ForEachRight<T>(this IEnumerable<T> enumerable, Action<T> function)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (function == null)
+            {
+                throw new ArgumentNullException(nameof(function));
+            }
+
+            foreach (var element in enumerable.Reverse())
+            {
+                function(element);
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+var testString = "";
+new string[] { "world", "Hello" }.ForEachRight((string x) => testString = testString + " " + x); # " Hello world"
 ```
 
 </details>
