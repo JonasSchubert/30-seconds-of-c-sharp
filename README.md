@@ -67,8 +67,8 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`initializeArrayWithValues`](#initializeArrayWithValues)
 * [`initializeNDArray`](#initializeNDArray)
 * [`intersection`](#intersection)
-* [`intersectionBy`](#intersectionBy)
-* [`intersectionWith`](#intersectionWith)
+* [`intersectionSelect`](#intersectionSelect)
+* [`intersectionWhere`](#intersectionWhere)
 * [`isSorted`](#isSorted)
 * [`join`](#join)
 * [`jsonToCsv`](#jsonToCsv)
@@ -1800,55 +1800,128 @@ Create a n-dimensional array with given value.
 
 ### intersection
 
-Returns a list of elements that exist in both arrays.
+Returns an enumerable of elements that exist in both enumerables.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> Intersection<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            return enumerable1.Where(x => enumerable2.Any(y => x.Equals(y))).Concat(enumerable2.Where(x => enumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of", "Hello" }.Intersection(new string[] { "of", "organisation", "conplement", "Hello", "of" }); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### intersectionBy
+### intersectionSelect
 
-Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+Returns an enumerable of elements that exist in both enumerables, after applying the provided function to each enumerable element of both.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<K> IntersectionSelect<T, K>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, K> selectFunction)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            if (selectFunction == null)
+            {
+                throw new ArgumentNullException(nameof(selectFunction));
+            }
+
+            var selectedEnumerable1 = enumerable1.Select(selectFunction);
+            var selectedEnumerable2 = enumerable2.Select(selectFunction);
+
+            return selectedEnumerable1.Where(x => selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => selectedEnumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of", "of" }.IntersectionSelect(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### intersectionWith
+### intersectionWhere
 
-Returns a list of elements that exist in both arrays, using a provided comparator function.
+Returns an enumerable of elements that exist in both enumerables, using a provided comparator function.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> IntersectionWhere<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, bool> whereFunction)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var selectedEnumerable1 = enumerable1.Where(whereFunction);
+            var selectedEnumerable2 = enumerable2.Where(whereFunction);
+
+            return selectedEnumerable1.Where(x => selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => selectedEnumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionWhere(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x.Contains("or")); # new string[] { "organisation" }
 ```
 
 </details>
