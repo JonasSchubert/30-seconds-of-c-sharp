@@ -1599,7 +1599,7 @@ namespace Conplement.Snippets.Enumerable
 
 ```c#
 new List<uint> { 1u, 2u, 3u, 4u, 0u, 1u }.HasDuplicates(); # true
-new string[] { "Hello", "world", "organisation", "seconds", "of" }; # false
+new string[] { "Hello", "world", "organisation", "seconds", "of" }.HasDuplicates(); # false
 ```
 
 </details>
@@ -1608,18 +1608,47 @@ new string[] { "Hello", "world", "organisation", "seconds", "of" }; # false
 
 ### indexOfAll
 
-Returns all indices of a `value` in an array.
-If the `value` never occurs, returns `[]`.
+Returns all indices of a value in an enumerable. If the value never occurs, returns empty.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<int> IndexOfAll<T>(this IEnumerable<T> enumerable, Func<T, bool> whereFunction)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var foundElements = enumerable.Where(whereFunction);
+            if (foundElements.Any())
+            {
+                for (var index = 0; index < enumerable.Count(); index++)
+                {
+                    if (foundElements.Any(x => x.Equals(enumerable.ElementAt(index))))
+                    {
+                        yield return index;
+                    }
+                }
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<bool?> { false, false, false, false, false, false, false, false, false }.IndexOfAll(x => x == true); # empty enumerable
+new string[] { "Hello", "world", "organisation", "seconds", "or" }.IndexOfAll(x => x.Contains("or")); # new List<int> { 1, 2, 4 };
 ```
 
 </details>
