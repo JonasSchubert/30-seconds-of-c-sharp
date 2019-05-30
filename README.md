@@ -58,9 +58,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`findLastIndex`](#findLastIndex)
 * [`flatten`](#flatten)
 * [`forEachRight`](#forEachRight)
-* [`groupBy`](#groupBy)
 * [`hasDuplicates`](#hasDuplicates)
-* [`head`](#head)
 * [`indexOfAll`](#indexOfAll)
 * [`initial`](#initial)
 * [`initialize2DArray`](#initialize2DArray)
@@ -69,12 +67,11 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`initializeArrayWithValues`](#initializeArrayWithValues)
 * [`initializeNDArray`](#initializeNDArray)
 * [`intersection`](#intersection)
-* [`intersectionBy`](#intersectionBy)
-* [`intersectionWith`](#intersectionWith)
+* [`intersectionSelect`](#intersectionSelect)
+* [`intersectionWhere`](#intersectionWhere)
 * [`isSorted`](#isSorted)
 * [`join`](#join)
 * [`jsonToCsv`](#jsonToCsv)
-* [`last`](#last)
 * [`longestItem`](#longestItem)
 * [`maxN`](#maxN)
 * [`minN`](#minN)
@@ -1468,16 +1465,50 @@ new List<int> { 1, 2, 3, 4, 0 }.FindLast(x => x % 4 == 0 && x != 0); # 4
 ### findLastIndex
 
 Returns the index of the last element for which the provided function returns a truthy value.
+Returns -1 if nothing found at all.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static int FindLastIndex<T>(this IEnumerable<T> enumerable, Func<T, bool> whereFunction)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var foundElement = enumerable.Where(whereFunction).Reverse().FirstOrDefault();
+            if (foundElement == null)
+            {
+                return -1;
+            }
+
+            for (var index = enumerable.Count() - 1; index > -1; index--)
+            {
+                if (enumerable.ElementAt(index).Equals(foundElement))
+                {
+                    return index;
+                }
+            }
+
+            throw new InvalidOperationException(nameof(FindLastIndex));
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int> { 1, 2, 3, 4, 0 }.FindLastIndex(x => x % 4 == 0 && x != 0); # 3
 ```
 
 </details>
@@ -1505,36 +1536,40 @@ Flattens an array up to the specified depth.
 
 ### forEachRight
 
-Executes a provided function once for each array element, starting from the array's last element.
+Executes a provided function once for each enumerable element, starting from the enumerable's last element.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static void ForEachRight<T>(this IEnumerable<T> enumerable, Action<T> function)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (function == null)
+            {
+                throw new ArgumentNullException(nameof(function));
+            }
+
+            foreach (var element in enumerable.Reverse())
+            {
+                function(element);
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### groupBy
-
-Groups the elements of an array based on the given function.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
+var testString = "";
+new string[] { "world", "Hello" }.ForEachRight((string x) => testString = testString + " " + x); # " Hello world"
 ```
 
 </details>
@@ -1563,26 +1598,7 @@ namespace Conplement.Snippets.Enumerable
 
 ```c#
 new List<uint> { 1u, 2u, 3u, 4u, 0u, 1u }.HasDuplicates(); # true
-new string[] { "Hello", "world", "organisation", "seconds", "of" }; # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### head
-
-Returns the head of a list.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of" }.HasDuplicates(); # false
 ```
 
 </details>
@@ -1591,18 +1607,47 @@ Returns the head of a list.
 
 ### indexOfAll
 
-Returns all indices of a `value` in an array.
-If the `value` never occurs, returns `[]`.
+Returns all indices of a value in an enumerable. If the value never occurs, returns empty.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<int> IndexOfAll<T>(this IEnumerable<T> enumerable, Func<T, bool> whereFunction)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var foundElements = enumerable.Where(whereFunction);
+            if (foundElements.Any())
+            {
+                for (var index = 0; index < enumerable.Count(); index++)
+                {
+                    if (foundElements.Any(x => x.Equals(enumerable.ElementAt(index))))
+                    {
+                        yield return index;
+                    }
+                }
+            }
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<bool?> { false, false, false, false, false, false, false, false, false }.IndexOfAll(x => x == true); # empty enumerable
+new string[] { "Hello", "world", "organisation", "seconds", "or" }.IndexOfAll(x => x.Contains("or")); # new List<int> { 1, 2, 4 };
 ```
 
 </details>
@@ -1754,55 +1799,128 @@ Create a n-dimensional array with given value.
 
 ### intersection
 
-Returns a list of elements that exist in both arrays.
+Returns an enumerable of elements that exist in both enumerables.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> Intersection<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            return enumerable1.Where(x => enumerable2.Any(y => x.Equals(y))).Concat(enumerable2.Where(x => enumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of", "Hello" }.Intersection(new string[] { "of", "organisation", "conplement", "Hello", "of" }); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### intersectionBy
+### intersectionSelect
 
-Returns a list of elements that exist in both arrays, after applying the provided function to each array element of both.
+Returns an enumerable of elements that exist in both enumerables, after applying the provided function to each enumerable element of both.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<K> IntersectionSelect<T, K>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, K> selectFunction)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            if (selectFunction == null)
+            {
+                throw new ArgumentNullException(nameof(selectFunction));
+            }
+
+            var selectedEnumerable1 = enumerable1.Select(selectFunction);
+            var selectedEnumerable2 = enumerable2.Select(selectFunction);
+
+            return selectedEnumerable1.Where(x => selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => selectedEnumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of", "of" }.IntersectionSelect(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### intersectionWith
+### intersectionWhere
 
-Returns a list of elements that exist in both arrays, using a provided comparator function.
+Returns an enumerable of elements that exist in both enumerables, using a provided comparator function.
 
 ```c#
-// TODO
+namespace Conplement.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static IEnumerable<T> IntersectionWhere<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, bool> whereFunction)
+        {
+            if (enumerable1 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable1));
+            }
+
+            if (enumerable2 == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable2));
+            }
+
+            if (whereFunction == null)
+            {
+                throw new ArgumentNullException(nameof(whereFunction));
+            }
+
+            var selectedEnumerable1 = enumerable1.Where(whereFunction);
+            var selectedEnumerable2 = enumerable2.Where(whereFunction);
+
+            return selectedEnumerable1.Where(x => selectedEnumerable2.Any(y => x.Equals(y))).Concat(selectedEnumerable2.Where(x => selectedEnumerable1.Any(y => x.Equals(y)))).Distinct();
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionWhere(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x.Contains("or")); # new string[] { "organisation" }
 ```
 
 </details>
@@ -1851,25 +1969,6 @@ Uses a separator and an end separator.
 ### jsonToCsv ![advanced](/advanced.svg)
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### last
-
-Returns the last element in an array.
 
 ```c#
 // TODO
