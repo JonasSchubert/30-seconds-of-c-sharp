@@ -4534,6 +4534,12 @@ var nO = "nO".YesNo(); # false
 
 You're always welcome to contribute to this project. Please read the [contribution guide](CONTRIBUTING.md).
 
+## Contributors
+
+| [<img alt="JonasSchubert" src="https://avatars0.githubusercontent.com/u/21952813?v=4&s=117" width="117"/>](https://github.com/JonasSchubert) | [<img alt="DenisBiondic" src="https://avatars1.githubusercontent.com/u/3341262?v=4&s=117" width="117"/>](https://github.com/DenisBiondic) 
+| :---------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------: |
+| [Jonas Schubert](https://github.com/JonasSchubert) | [Denis Biondic](https://github.com/DenisBiondic) |
+
 ## License
 
 This project is licensed under the MIT License - see the [License File](LICENSE.md) for details
