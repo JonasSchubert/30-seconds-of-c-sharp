@@ -1,6 +1,5 @@
 ![Logo](/logo.png)
 
-[![CI Status](https://cpgithub.visualstudio.com/GitHubPipelines/_apis/build/status/conplementAG.30-seconds-of-c-sharp)](https://cpgithub.visualstudio.com/GitHubPipelines/_build/latest?definitionId=7)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
@@ -256,7 +255,7 @@ https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netfr
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -272,7 +271,7 @@ namespace Conplement.Snippets.Date
 <summary>Examples</summary>
 
 ``` c#
-Conplement.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
+JonasSchubert.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 ```
 
 </details>
@@ -284,7 +283,7 @@ Conplement.Snippets.Date.DayOfYear() # 12/31/2016: day 366 of 2016 (Leap Year)
 Returns the human readable format of the given number of milliseconds.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -332,7 +331,7 @@ var actual = Date.FormatDuration(34325055574ul); # "56 weeks, 5 days, 6 hours, 4
 Returns a string of the form `HH:MM:SS` from a `DateTime` or `TimeSpan` object.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -369,7 +368,7 @@ Returns the difference (in days) between two dates.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -404,7 +403,7 @@ Converts an integer to a suffixed string, adding `am` or `pm` based on its value
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -446,7 +445,7 @@ Check if a date is after another date.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -481,7 +480,7 @@ Check if a date is before another date.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -514,7 +513,7 @@ DateTime(2018, 11, 21).IsBeforeDate(new DateTime(2018, 11, 22)) # true
 Check if a date is the same as another date.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -543,7 +542,7 @@ var actual = new DateTime(203940201L).IsSameDate(new DateTime(203940202L)); # fa
 Returns the maximum of the given dates.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -582,7 +581,7 @@ var actual = Date.MaxDate(list); # new DateTime(2019)
 Returns the minimum of the given dates.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -621,7 +620,7 @@ var actual = Date.MinDate(list); # new DateTime(2018)
 Returns tomorrow's date.
 
 ```c#
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     public static partial class Date
     {
@@ -631,7 +630,7 @@ namespace Conplement.Snippets.Date
                 ? DateTime.Now
                 : DateTime.UtcNow)
                 + TimeSpan.FromDays(1);
-            // Instead of TimeSpan you can also use https://github.com/conplementAG/FluentTimeSpan to add one day like tomorrow = DateTime.UtcNow + 1.Days()
+            // Instead of TimeSpan you can also use https://github.com/TimeXt/FluentTimeSpan to add one day like tomorrow = DateTime.UtcNow + 1.Days()
         }
     }
 }
@@ -659,7 +658,7 @@ Check if all elements in an array are equal.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -730,7 +729,7 @@ Splits values into two groups. If an element in `filter` is truthy, the correspo
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -813,7 +812,7 @@ Chunks an array into smaller arrays of a specified size.
 Removes invalid values from an array.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -890,7 +889,7 @@ Groups the elements of an enumerable based on the given function and returns the
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -944,7 +943,7 @@ Counts the occurrences of a value in an enumerable.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -998,7 +997,7 @@ Returns the difference between two enumerables.
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static IEnumerable<T> Difference<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2)
     {
@@ -1035,7 +1034,7 @@ Returns the difference between two enumerables, after applying the provided func
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static IEnumerable<K> DifferenceSelect<T, K>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, K> selectFunction)
     {
@@ -1080,7 +1079,7 @@ Filters out all values from an array for which the comparator function does not 
 ``` c#
 using System;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static IEnumerable<T> DifferenceWhere<T>(this IEnumerable<T> enumerable1, IEnumerable<T> enumerable2, Func<T, bool> whereFunction)
     {
@@ -1123,7 +1122,7 @@ new List<int>{ 1, 2, 3, 4, 0}.DifferenceWhere(new List<int>{ 1, 5, 3, 4, 1 }, x 
 Returns a new array with `n` elements removed from the left.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1161,7 +1160,7 @@ var enumerable = new bool[] { false, false, true, true }.Drop(3); # List with on
 Returns a new array with `n` elements removed from the right.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1199,7 +1198,7 @@ var enumerable = new bool[] { false, false, true, true }.DropRight(3); # List wi
 Removes elements from the end of an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1253,7 +1252,7 @@ var enumerable = new int[] { 1, 2, 3, 4, 1 }.DropRightWhile(x => x > 2); # List 
 Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1305,7 +1304,7 @@ new List<int>{ 1, 2, 3, 4, 1}.DropWhile(x => x => x > 2); # new List<int> { 3, 4
 Returns every nth element in an enumerable.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1346,7 +1345,7 @@ new List<int>{ 1, 2, 3, 4, 1}.EveryNth(3u); # new List<int> { 3 }
 Filters out the non-unique not null values in an enumerable.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1385,7 +1384,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "organisation"
 Filters out the non-unique not null values in an enumerable, based on a provided comparator function (where linq statement).
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1429,7 +1428,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "organisation"
 Returns the last element for which the provided function returns a truthy value.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1468,7 +1467,7 @@ Returns the index of the last element for which the provided function returns a 
 Returns -1 if nothing found at all.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1539,7 +1538,7 @@ Flattens an array up to the specified depth.
 Executes a provided function once for each enumerable element, starting from the enumerable's last element.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1581,7 +1580,7 @@ new string[] { "world", "Hello" }.ForEachRight((string x) => testString = testSt
 Checks an enumerable for duplicate values. Returns true if duplicate values exist and false if values are all unique.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1610,7 +1609,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of" }.HasDuplicates
 Returns all indices of a value in an enumerable. If the value never occurs, returns empty.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1678,7 +1677,7 @@ Returns all the elements of an array except the last one.
 Initializes a 2D array of given width and height and value.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1802,7 +1801,7 @@ Create a n-dimensional array with given value.
 Returns an enumerable of elements that exist in both enumerables.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1828,7 +1827,7 @@ namespace Conplement.Snippets.Enumerable
 <summary>Examples</summary>
 
 ```c#
-new string[] { "Hello", "world", "organisation", "seconds", "of", "Hello" }.Intersection(new string[] { "of", "organisation", "conplement", "Hello", "of" }); # new string[] { "Hello", "organisation", "of" }
+new string[] { "Hello", "world", "organisation", "seconds", "of", "Hello" }.Intersection(new string[] { "of", "organisation", "GuepardoApps", "Hello", "of" }); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
@@ -1840,7 +1839,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "Hello" }.Inte
 Returns an enumerable of elements that exist in both enumerables, after applying the provided function to each enumerable element of both.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1874,7 +1873,7 @@ namespace Conplement.Snippets.Enumerable
 <summary>Examples</summary>
 
 ```c#
-new string[] { "Hello", "world", "organisation", "seconds", "of", "of" }.IntersectionSelect(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x); # new string[] { "Hello", "organisation", "of" }
+new string[] { "Hello", "world", "organisation", "seconds", "of", "of" }.IntersectionSelect(new string[] { "of", "organisation", "GuepardoApps", "Hello", "of" }, x => x); # new string[] { "Hello", "organisation", "of" }
 ```
 
 </details>
@@ -1886,7 +1885,7 @@ new string[] { "Hello", "world", "organisation", "seconds", "of", "of" }.Interse
 Returns an enumerable of elements that exist in both enumerables, using a provided comparator function.
 
 ```c#
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     public static partial class Enumerable
     {
@@ -1920,7 +1919,7 @@ namespace Conplement.Snippets.Enumerable
 <summary>Examples</summary>
 
 ```c#
-new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionWhere(new string[] { "of", "organisation", "conplement", "Hello", "of" }, x => x.Contains("or")); # new string[] { "organisation" }
+new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionWhere(new string[] { "of", "organisation", "GuepardoApps", "Hello", "of" }, x => x.Contains("or")); # new string[] { "organisation" }
 ```
 
 </details>
@@ -2919,7 +2918,7 @@ Linq documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
 
 ```c#
-namespace Conplement.Snippets.Math
+namespace JonasSchubert.Snippets.Math
 {
     public static partial class Math
     {
@@ -3524,7 +3523,7 @@ Returns the number of times a function executed per second.
 Iterates over a callback `n` times
 
 ```c#
-namespace Conplement.Snippets.Method
+namespace JonasSchubert.Snippets.Method
 {
     public static partial class Method
     {
@@ -3703,7 +3702,7 @@ Most other checks are already integrated into C#
 https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith?view=netframework-4.7.2
 
 ```c#
-namespace Conplement.Snippets.String
+namespace JonasSchubert.Snippets.String
 {
     public static partial class String
     {
@@ -4447,7 +4446,7 @@ Stopwatch documentation
 https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
 
 ```c#
-namespace Conplement.Snippets.Utility
+namespace JonasSchubert.Snippets.Utility
 {
     public static partial class Utility
     {
@@ -4497,7 +4496,7 @@ Adds an ordinal suffix to a number.
 Returns `true` if the string is `y`/`yes` or `false` if the string is `n`/`no`.
 
 ```c#
-namespace Conplement.Snippets.Utility
+namespace JonasSchubert.Snippets.Utility
 {
     public static partial class Utility
     {
@@ -4528,8 +4527,6 @@ var nO = "nO".YesNo(); # false
 
 <br>[↑ Back to top](#table-of-contents)
 
-
-
 ## Contribute
 
 You're always welcome to contribute to this project. Please read the [contribution guide](CONTRIBUTING.md).
@@ -4542,4 +4539,28 @@ You're always welcome to contribute to this project. Please read the [contributi
 
 ## License
 
-This project is licensed under the MIT License - see the [License File](LICENSE.md) for details
+30 Seconds of C# is distributed under the MIT license. [See LICENSE](LICENSE.md) for details.
+
+```
+MIT License
+
+Copyright (c) 2018-2019 JonasSchubert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

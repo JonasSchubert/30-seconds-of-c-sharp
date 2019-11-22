@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     /// <summary>
     /// Partial class for date snippets

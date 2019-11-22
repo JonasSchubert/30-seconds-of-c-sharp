@@ -1,7 +1,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Utility.Test
+namespace JonasSchubert.Snippets.Utility.Test
 {
     public class UtilityYesNoUnitTest
     {
@@ -16,7 +16,7 @@ namespace Conplement.Snippets.Utility.Test
         [InlineData("N", false)]
         [InlineData("no", false)]
         [InlineData("nO", false)]
-        [InlineData("nö", false)]
+        [InlineData("nï¿½", false)]
         [InlineData("noyes", false)]
         [InlineData("yesno", false)]
         public void YesNo_ShouldReturnExpectedResult_ForGivenData(string test, bool expected)

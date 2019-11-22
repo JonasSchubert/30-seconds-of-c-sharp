@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Conplement.Snippets.Math
+namespace JonasSchubert.Snippets.Math
 {
     /// <summary>
     /// Partial class for math snippets

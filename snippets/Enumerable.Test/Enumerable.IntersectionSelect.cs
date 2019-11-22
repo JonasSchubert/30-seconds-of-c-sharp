@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Enumerable.Test
+namespace JonasSchubert.Snippets.Enumerable.Test
 {
     public class EnumerableIntersectionSelectUnitTest
     {
@@ -42,7 +42,7 @@ namespace Conplement.Snippets.Enumerable.Test
             };
             var array2 = new string[]
             {
-                "of", "organisation", "conplement", "Hello", "of"
+                "of", "organisation", "GuepardoApps", "Hello", "of"
             };
 
             // Act

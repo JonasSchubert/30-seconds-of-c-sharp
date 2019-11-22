@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Enumerable.Test
+namespace JonasSchubert.Snippets.Enumerable.Test
 {
     public class EnumerableDifferenceUnitTest
     {
@@ -42,7 +42,7 @@ namespace Conplement.Snippets.Enumerable.Test
             };
             var array2 = new string[]
             {
-                "of","organisation","conplement","Hello","of"
+                "of","organisation","GuepardoApps","Hello","of"
             };
 
             // Act
@@ -53,7 +53,7 @@ namespace Conplement.Snippets.Enumerable.Test
             actual.Count().Should().Be(3);
             actual.ElementAt(0).Should().Be("world");
             actual.ElementAt(1).Should().Be("seconds");
-            actual.ElementAt(2).Should().Be("conplement");
+            actual.ElementAt(2).Should().Be("GuepardoApps");
         }
 
         [Fact]

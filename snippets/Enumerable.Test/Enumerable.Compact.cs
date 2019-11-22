@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Enumerable.Test
+namespace JonasSchubert.Snippets.Enumerable.Test
 {
     public class EnumerableCompactUnitTest
     {
@@ -12,8 +12,8 @@ namespace Conplement.Snippets.Enumerable.Test
         public void ShouldReturnExpectedEnumerable_ForArrayOfString()
         {
             // Arrange
-            var enumerable = new string[] { "Hello", "This", "Is", "Conplement", string.Empty, "Awesome", "", null };
-            var expected = new string[] { "Hello", "This", "Is", "Conplement", "Awesome" };
+            var enumerable = new string[] { "Hello", "This", "Is", "GuepardoApps", string.Empty, "Awesome", "", null };
+            var expected = new string[] { "Hello", "This", "Is", "GuepardoApps", "Awesome" };
 
             // Act
             var actual = enumerable.Compact();

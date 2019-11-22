@@ -2,7 +2,7 @@ using System;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Enumerable.Test
+namespace JonasSchubert.Snippets.Enumerable.Test
 {
     public class EnumerableInitialize2DArrayUnitTest
     {
@@ -48,7 +48,7 @@ namespace Conplement.Snippets.Enumerable.Test
                 Name = "Herbert",
                 Address = new Address
                 {
-                    Street = "Herbertstraße 5a"
+                    Street = "Herbertstraï¿½e 5a"
                 }
             };
             var expected = new[,] { { person, person }, { person, person } };

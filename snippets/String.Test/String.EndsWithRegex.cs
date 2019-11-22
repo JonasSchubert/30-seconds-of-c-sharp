@@ -2,7 +2,7 @@ using System.Text.RegularExpressions;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.String.Test
+namespace JonasSchubert.Snippets.String.Test
 {
     public class StringEndsWithRegexUnitTest
     {

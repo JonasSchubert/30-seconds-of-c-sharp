@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     /// <summary>
     /// Partial class for date snippets
@@ -18,7 +18,7 @@ namespace Conplement.Snippets.Date
                 ? DateTime.Now
                 : DateTime.UtcNow)
                 + TimeSpan.FromDays(1);
-            // Instead of TimeSpan you can also use https://github.com/conplementAG/FluentTimeSpan to add one day like tomorrow = DateTime.UtcNow + 1.Days()
+            // Instead of TimeSpan you can also use https://github.com/TimeXt/FluentTimeSpan to add one day like tomorrow = DateTime.UtcNow + 1.Days()
         }
     }
 }

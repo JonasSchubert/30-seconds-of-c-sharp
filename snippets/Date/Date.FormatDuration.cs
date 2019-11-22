@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     /// <summary>
     /// Partial class for date snippets

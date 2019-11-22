@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Conplement.Snippets.Date
+namespace JonasSchubert.Snippets.Date
 {
     /// <summary>
     /// Partial class for date snippets
@@ -11,7 +11,7 @@ namespace Conplement.Snippets.Date
         /// Returns the difference (in days) between two dates.
         /// </summary>
         /// Documentation about datetime:  https://docs.microsoft.com/de-de/dotnet/api/system.datetime
-        /// Also have a look at: https://github.com/conplementAG/FluentTimeSpan
+        /// Also have a look at: https://github.com/TimeXt/FluentTimeSpan
         public static double GetDaysDiffBetweenDates(DateTime dateTime1, DateTime dateTime2)
         {
             if (dateTime1.Kind != dateTime2.Kind)

@@ -1,19 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Conplement.Snippets.Type</AssemblyName>
-    <RootNamespace>Conplement.Snippets.Type</RootNamespace>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>JonasSchubert.Snippets.Type</AssemblyName>
+    <RootNamespace>JonasSchubert.Snippets.Type</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Jonas Schubert</Authors>
-    <Company>conplementAG</Company>
-    <Copyright>conplementAG</Copyright>
+    <Company>GuepardoApps</Company>
+    <Copyright>JonasSchubert</Copyright>
     <Description>A curated collection of useful C# snippets about types that you can understand in 30 seconds or less.</Description>
-    <PackageLicenseUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/blob/master/LICENSE.md</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/projects/1</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/conplementAG/30-seconds-of-c-sharp/</RepositoryUrl>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/JonasSchubert/30-seconds-of-c-sharp/projects/1</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JonasSchubert/30-seconds-of-c-sharp/</RepositoryUrl>
     <RepositoryType>GIT</RepositoryType>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

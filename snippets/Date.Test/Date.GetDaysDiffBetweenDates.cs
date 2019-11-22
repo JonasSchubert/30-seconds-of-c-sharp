@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Date.Test
+namespace JonasSchubert.Snippets.Date.Test
 {
     public class DateGetDaysDiffBetweenDatesUnitTest
     {

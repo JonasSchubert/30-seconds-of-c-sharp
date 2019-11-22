@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Xunit;
 
-namespace Conplement.Snippets.Enumerable.Test
+namespace JonasSchubert.Snippets.Enumerable.Test
 {
     public class EnumerableDropUnitTest
     {
@@ -52,8 +52,8 @@ namespace Conplement.Snippets.Enumerable.Test
         public void ShouldReturnExpectedEnumerable_ForArrayOfString()
         {
             // Arrange
-            var enumerable = new string[] { "Hello", "This", "Is", "Conplement", "Awesome", ":D" };
-            var expected = new string[] { "Hello", "This", "Is", "Conplement", "Awesome", ":D" };
+            var enumerable = new string[] { "Hello", "This", "Is", "GuepardoApps", "Awesome", ":D" };
+            var expected = new string[] { "Hello", "This", "Is", "GuepardoApps", "Awesome", ":D" };
 
             // Act
             var actual = enumerable.Drop(0);

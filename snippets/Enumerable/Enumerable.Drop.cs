@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Conplement.Snippets.Enumerable
+namespace JonasSchubert.Snippets.Enumerable
 {
     /// <summary>
     /// Partial class for Enumerable snippets

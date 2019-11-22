@@ -2,7 +2,7 @@ using FluentAssertions;
 using System;
 using Xunit;
 
-namespace Conplement.Snippets.Utility.Test
+namespace JonasSchubert.Snippets.Utility.Test
 {
     public class UtilityTimeTakenUnitTest
     {

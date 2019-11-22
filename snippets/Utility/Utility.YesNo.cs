@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace Conplement.Snippets.Utility
+namespace JonasSchubert.Snippets.Utility
 {
     /// <summary>
     /// Partial class for utility snippets
