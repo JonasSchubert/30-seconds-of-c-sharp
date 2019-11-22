@@ -35,7 +35,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <summary>View contents</summary>
 
 * [`allEqual`](#allEqual)
-* [`arrayToCsv`](#arrayToCsv)
 * [`bifurcate`](#bifurcate)
 * [`bubbleSort`](#bubbleSort)
 * [`chunk`](#chunk)
@@ -108,6 +107,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`takeRight`](#takeRight)
 * [`takeRightWhile`](#takeRightWhile)
 * [`takeWhile`](#takeWhile)
+* [`toCsv`](#toCsv)
 * [`toHash`](#toHash)
 * [`union`](#union)
 * [`unionBy`](#unionBy)
@@ -696,45 +696,6 @@ namespace JonasSchubert.Snippets.Enumerable
 
 ``` c#
 new double[] { 1.25, 1.25, 1.5, -1.5 }.AllEqual(); # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### arrayToCsv
-
-Converts a 2D array to a comma-separated values (CSV) string.
-
-```c#
-
-namespace JonasSchubert.Snippets.Enumerable
-{
-    public static partial class Enumerable
-    {
-        public static string ArrayToCsv<T>(this IEnumerable<IEnumerable<T>> enumerable, string delimiter = ",")
-        {
-            if (enumerable == null)
-            {
-                throw new ArgumentNullException(nameof(enumerable));
-            }
-
-            var isNumeric = typeof(T).IsNumericType();
-
-            return string.Join("\n", enumerable.Select(subEnumerable => string.Join(delimiter, subEnumerable.Select(value => isNumeric ? value.ToString().Replace(",", ".") : value.ToString()))));
-        }
-    }
-}
-
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-new List<List<bool>> { new List<bool> { true, true }, new List<bool> { true, false } }.ArrayToCsv(); # "True,True\nTrue,False"
-new double[][] { new double[] { 1.1, 2.2, 3.3 }, new double[] { 4.4, 5.5, 6.6 } }.ArrayToCsv() # "1.1,2.2,3.3\n4.4,5.5,6.6"
-new List<List<TestStruct>> { new List<TestStruct> { new TestStruct { Byte = 0 } }, new List<TestStruct> { new TestStruct { Byte = 1 }, new TestStruct { Byte = 2 } } }.ArrayToCsv("-") # "Byte: 0\nByte: 1-Byte: 2"
 ```
 
 </details>
@@ -2708,6 +2669,43 @@ Removes elements in an array until the passed function returns `true`. Returns t
 
 ```c#
 // TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### toCsv
+
+Converts a 2D enumerable to a comma-separated values (CSV) string.
+
+```c#
+
+namespace JonasSchubert.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static string ToCsv<T>(this IEnumerable<IEnumerable<T>> enumerable, string delimiter = ",")
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            return string.Join("\n", enumerable.Select(subEnumerable => string.Join(delimiter, subEnumerable.Select(value => typeof(T).IsNumericType() ? value.ToString().Replace(",", ".") : value.ToString()))));
+        }
+    }
+}
+
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+new List<List<bool>> { new List<bool> { true, true }, new List<bool> { true, false } }.ToCsv(); # "True,True\nTrue,False"
+new double[][] { new double[] { 1.1, 2.2, 3.3 }, new double[] { 4.4, 5.5, 6.6 } }.ToCsv() # "1.1,2.2,3.3\n4.4,5.5,6.6"
+new List<List<TestStruct>> { new List<TestStruct> { new TestStruct { Byte = 0 } }, new List<TestStruct> { new TestStruct { Byte = 1 }, new TestStruct { Byte = 2 } } }.ToCsv("-") # "Byte: 0\nByte: 1-Byte: 2"
 ```
 
 </details>

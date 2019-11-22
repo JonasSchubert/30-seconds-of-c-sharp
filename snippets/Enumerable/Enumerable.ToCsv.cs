@@ -36,18 +36,16 @@ namespace JonasSchubert.Snippets.Enumerable
         }
 
         /// <summary>
-        /// Converts a 2D array to a comma-separated values (CSV) string.
+        /// Converts a 2D enumerable to a comma-separated values (CSV) string.
         /// </summary>
-        public static string ArrayToCsv<T>(this IEnumerable<IEnumerable<T>> enumerable, string delimiter = ",")
+        public static string ToCsv<T>(this IEnumerable<IEnumerable<T>> enumerable, string delimiter = ",")
         {
             if (enumerable == null)
             {
                 throw new ArgumentNullException(nameof(enumerable));
             }
 
-            var isNumeric = typeof(T).IsNumericType();
-
-            return string.Join("\n", enumerable.Select(subEnumerable => string.Join(delimiter, subEnumerable.Select(value => isNumeric ? value.ToString().Replace(",", ".") : value.ToString()))));
+            return string.Join("\n", enumerable.Select(subEnumerable => string.Join(delimiter, subEnumerable.Select(value => typeof(T).IsNumericType() ? value.ToString().Replace(",", ".") : value.ToString()))));
         }
     }
 }

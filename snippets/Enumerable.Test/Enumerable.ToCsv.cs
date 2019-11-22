@@ -4,7 +4,7 @@ using Xunit;
 
 namespace JonasSchubert.Snippets.Enumerable.Test
 {
-    public class EnumerableArrayToCsvUnitTest
+    public class EnumerableToCsvUnitTest
     {
         public struct TestStruct
         {
@@ -20,8 +20,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var list = new List<List<bool>> { new List<bool> { true, true }, new List<bool> { true, false } };
 
             // Act
-            var actual1 = list.ArrayToCsv();
-            var actual2 = list.ArrayToCsv("-");
+            var actual1 = list.ToCsv();
+            var actual2 = list.ToCsv("-");
 
             // Assert
             actual1.Should().Be("True,True\nTrue,False");
@@ -35,8 +35,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var list = new List<List<int>> { new List<int> { 1, 2, 3 }, new List<int> { 4, 5, 6 } };
 
             // Act
-            var actual1 = list.ArrayToCsv();
-            var actual2 = list.ArrayToCsv("-");
+            var actual1 = list.ToCsv();
+            var actual2 = list.ToCsv("-");
 
             // Assert
             actual1.Should().Be("1,2,3\n4,5,6");
@@ -50,8 +50,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var array = new double[][] { new double[] { 1.1, 2.2, 3.3 }, new double[] { 4.4, 5.5, 6.6 } };
 
             // Act
-            var actual1 = array.ArrayToCsv();
-            var actual2 = array.ArrayToCsv("-");
+            var actual1 = array.ToCsv();
+            var actual2 = array.ToCsv("-");
 
             // Assert
             actual1.Should().Be("1.1,2.2,3.3\n4.4,5.5,6.6");
@@ -65,8 +65,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var array = new float[][] { new float[] { 1.1f, 2.2f, 3.3f }, new float[] { 4.4f, 5.5f, 6.6f }, new float[] { 7.7f, 8.8f, 9.9f } };
 
             // Act
-            var actual1 = array.ArrayToCsv();
-            var actual2 = array.ArrayToCsv("-");
+            var actual1 = array.ToCsv();
+            var actual2 = array.ToCsv("-");
 
             // Assert
             actual1.Should().Be("1.1,2.2,3.3\n4.4,5.5,6.6\n7.7,8.8,9.9");
@@ -80,8 +80,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var array = new string[][] { new string[] { "Hello", "World" }, new string[] { "Jonas", "Schubert" } };
 
             // Act
-            var actual1 = array.ArrayToCsv();
-            var actual2 = array.ArrayToCsv("-");
+            var actual1 = array.ToCsv();
+            var actual2 = array.ToCsv("-");
 
             // Assert
             actual1.Should().Be("Hello,World\nJonas,Schubert");
@@ -95,8 +95,8 @@ namespace JonasSchubert.Snippets.Enumerable.Test
             var array = new List<List<TestStruct>> { new List<TestStruct> { new TestStruct { Byte = 0 } }, new List<TestStruct> { new TestStruct { Byte = 1 }, new TestStruct { Byte = 2 } } };
 
             // Act
-            var actual1 = array.ArrayToCsv();
-            var actual2 = array.ArrayToCsv("-");
+            var actual1 = array.ToCsv();
+            var actual2 = array.ToCsv("-");
 
             // Assert
             actual1.Should().Be("Byte: 0\nByte: 1,Byte: 2");
