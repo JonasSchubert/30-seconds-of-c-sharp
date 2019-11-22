@@ -247,10 +247,9 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 
 ### dayOfYear
 
-Returns the day of the current year
+Returns the day of the current year.
 
-Already integrated into C#
-https://docs.microsoft.com/de-de/dotnet/api/system.datetime.dayofyear?view=netframework-4.7.2
+Already integrated [here](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.dayofyear).
 
 ``` c#
 using System;
@@ -2912,10 +2911,9 @@ Checks if two numbers are approximately equal to each other.
 
 Returns the average of two or more numbers.
 
-The method excepts numbers as params and returns the average as a result
+The method excepts numbers as params and returns the average as a result.
 
-Linq documentation
-https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+Linq documentation [here](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum).
 
 ```c#
 namespace JonasSchubert.Snippets.Math
@@ -3725,12 +3723,11 @@ Decapitalizes the first letter of a string.
 
 ### endsWithRegex
 
-Check if a string is ends with a given substring using a regex
+Check if a string is ends with a given substring using a regex.
 
-The method excepts the string to test and a regex
+The method excepts the string to test and a regex.
 
-Most other checks are already integrated into C#
-https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith?view=netframework-4.7.2
+Most other checks are already [integrated](https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith).
 
 ```c#
 namespace JonasSchubert.Snippets.String
@@ -4473,8 +4470,7 @@ Converts the values of RGB components to a color code.
 
 Measures the time taken by a function to execute.
 
-Stopwatch documentation
-https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
+Stopwatch documentation [here](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch).
 
 ```c#
 namespace JonasSchubert.Snippets.Utility
