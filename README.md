@@ -80,7 +80,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`intersection`](#intersection)
 * [`intersectionSelect`](#intersectionSelect)
 * [`intersectionWhere`](#intersectionWhere)
-* [`isSorted`](#isSorted)
 * [`jsonToCsv`](#jsonToCsv)
 * [`longestItem`](#longestItem)
 * [`maxN`](#maxN)
@@ -106,6 +105,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`shank`](#shank)
 * [`shuffle`](#shuffle)
 * [`similarity`](#similarity)
+* [`sortedDirection`](#sortedDirection)
 * [`sortedIndex`](#sortedIndex)
 * [`sortedIndexBy`](#sortedIndexBy)
 * [`sortedLastIndex`](#sortedLastIndex)
@@ -1949,25 +1949,6 @@ new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionW
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isSorted
-
-Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### jsonToCsv ![advanced](/advanced.svg)
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.
@@ -2444,6 +2425,79 @@ Returns an array of elements that appear in both arrays.
 
 ```c#
 // TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### sortedDirection
+
+Returns `Direction.Ascending` if the enumerable is sorted in ascending order, `Direction.Descending` if it is sorted in descending order or `Direction.NotSorted` if it is not sorted or has only one value.
+
+```c#
+namespace JonasSchubert.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static Direction SortedDirection<T>(this IEnumerable<T> enumerable)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (enumerable.Count() <= 1)
+            {
+                return Direction.NotSorted;
+            }
+
+            var direction = enumerable.GetDirection(0, 1);
+            if (enumerable.Count() > 2)
+            {
+                for (var index = 2; index < enumerable.Count(); index++)
+                {
+                    var currentDirection = enumerable.GetDirection(index - 1, index);
+                    direction = direction == Direction.NotSorted ? currentDirection : direction;
+
+                    if (direction != currentDirection)
+                    {
+                        return Direction.NotSorted;
+                    }
+                }
+            }
+
+            return direction;
+        }
+
+        private static Direction GetDirection<T>(this IEnumerable<T> enumerable, int indexStart, int indexEnd)
+        {
+            var compareResult = Comparer<T>.Default.Compare(enumerable.ElementAt(indexStart), enumerable.ElementAt(indexEnd));
+            return compareResult < 0 ? Direction.Ascending : compareResult > 0 ? Direction.Descending : Direction.NotSorted;
+        }
+    }
+}
+
+```
+
+Uses enum JonasSchubert.Snippets.Enumerable.Direction.
+
+```c#
+public enum Direction
+    {
+        NotSorted,
+        Ascending,
+        Descending
+    }
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+new List<uint> { 1, 2, 3, 4, 5 }.SortedDirection(); # Direction.Ascending
+new string[] { "C", "B", "A" }.SortedDirection(); # Direction.Descending
+new List<TestStruct>() { new TestStruct { Byte = 0 }, new TestStruct { Byte = 1 }, new TestStruct { Byte = 0 } }.SortedDirection(); # Direction.NotSorted
 ```
 
 </details>
