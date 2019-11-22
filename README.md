@@ -770,17 +770,47 @@ bubbleSort uses the technique of comparing and swapping
 
 ### chunk
 
-Chunks an array into smaller arrays of a specified size.
+Chunks an enumerable into smaller lists of a specified size.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static List<List<T>> Chunk<T>(this IEnumerable<T> enumerable, int size)
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            if (size <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(size));
+            }
+
+            var list = new List<List<T>>();
+
+            var startIndex = 0;
+            while (startIndex < enumerable.Count())
+            {
+                list.Add(enumerable.Skip(startIndex).Take(size).ToList());
+                startIndex += size;
+            }
+
+            return list;
+        }
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new string[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" }.Chunk(6); # will result in two new string arrays => new string[]][] { new string[] { "1", "2", "3", "4", "5", "6" }, new string[] { "7", "8", "9", "10", "11" }}
+new int[] { 0, 1, 2 }.Chunk(6); # will result in one integer array => new int[][] { new int[] { 0, 1, 2 } }
 ```
 
 </details>
