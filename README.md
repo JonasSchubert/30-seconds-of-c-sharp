@@ -1,12 +1,25 @@
 ![Logo](/logo.png)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](./snippets) [![Test](https://img.shields.io/badge/tests-passing-brightgreen.svg)](./snippets) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 # 30 seconds of C#
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
 
 Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code), but there is no affiliation with that project.
+
+##### Official 30 Seconds of * projects
+
+* [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code/)
+* [30 Seconds of CSS](https://30-seconds.github.io/30-seconds-of-css/)
+* [30 Seconds of Interviews](https://30secondsofinterviews.org/)
+* [30 Seconds of React](https://github.com/30-seconds/30-seconds-of-react)
+* [30 Seconds of Python](https://github.com/30-seconds/30-seconds-of-python-code)
+* [30 Seconds of PHP](https://github.com/30-seconds/30-seconds-of-php-code)
+* [30 Seconds of Knowledge](https://chrome.google.com/webstore/detail/30-seconds-of-knowledge/mmgplondnjekobonklacmemikcnhklla)
+
+##### Unofficial 30 Seconds of * projects
+
+* [30 Seconds of Kotlin](https://github.com/IvanMwiruki/30-seconds-of-kotlin)
 
 ## Table of Contents
 
