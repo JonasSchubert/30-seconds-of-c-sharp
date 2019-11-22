@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using Xunit;
 
-namespace Conplement.Snippets.Method.Test
+namespace JonasSchubert.Snippets.Method.Test
 {
     public class MethodHzUnitTest
     {

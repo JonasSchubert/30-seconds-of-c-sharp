@@ -3504,14 +3504,45 @@ Returns the number of times a function executed per second.
 `hz` is the unit for `hertz`, the unit of frequency defined as one cycle per second.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Method
+{
+    public static partial class Method
+    {
+        public static long Hz(
+            Action action,
+            uint iterations = 100000)
+        {
+            var watch = Stopwatch.StartNew();
+
+            for (var iteration = 0; iteration < iterations; iteration++)
+            {
+                action.Invoke();
+            }
+
+            watch.Stop();
+
+            return watch.ElapsedMilliseconds > 0
+                ? (iterations * 1000) / watch.ElapsedMilliseconds
+                : long.MaxValue;
+        }
+        
+        ...
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+ # will return time depending on your  PC power
+
+int randomInt() => new Random().Next(0, 1000000);
+Method.Hz(randomInt);
+
+char[] charArrayFunc(string test) => test.ToCharArray().Select(x => (char)(x * 2)).Where(x => x > 0).ToArray();
+Method.Hz(charArrayFunc);
 ```
 
 </details>
