@@ -707,14 +707,34 @@ new double[] { 1.25, 1.25, 1.5, -1.5 }.AllEqual(); # false
 Converts a 2D array to a comma-separated values (CSV) string.
 
 ```c#
-// TODO
+
+namespace JonasSchubert.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static string ArrayToCsv<T>(this IEnumerable<IEnumerable<T>> enumerable, string delimiter = ",")
+        {
+            if (enumerable == null)
+            {
+                throw new ArgumentNullException(nameof(enumerable));
+            }
+
+            var isNumeric = typeof(T).IsNumericType();
+
+            return string.Join("\n", enumerable.Select(subEnumerable => string.Join(delimiter, subEnumerable.Select(value => isNumeric ? value.ToString().Replace(",", ".") : value.ToString()))));
+        }
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<List<bool>> { new List<bool> { true, true }, new List<bool> { true, false } }.ArrayToCsv(); # "True,True\nTrue,False"
+new double[][] { new double[] { 1.1, 2.2, 3.3 }, new double[] { 4.4, 5.5, 6.6 } }.ArrayToCsv() # "1.1,2.2,3.3\n4.4,5.5,6.6"
+new List<List<TestStruct>> { new List<TestStruct> { new TestStruct { Byte = 0 } }, new List<TestStruct> { new TestStruct { Byte = 1 }, new TestStruct { Byte = 2 } } }.ArrayToCsv("-") # "Byte: 0\nByte: 1-Byte: 2"
 ```
 
 </details>
