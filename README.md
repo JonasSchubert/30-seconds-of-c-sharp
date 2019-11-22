@@ -68,7 +68,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`intersectionSelect`](#intersectionSelect)
 * [`intersectionWhere`](#intersectionWhere)
 * [`isSorted`](#isSorted)
-* [`join`](#join)
 * [`jsonToCsv`](#jsonToCsv)
 * [`longestItem`](#longestItem)
 * [`maxN`](#maxN)
@@ -1939,26 +1938,6 @@ new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionW
 ### isSorted
 
 Returns `1` if the array is sorted in ascending order, `-1` if it is sorted in descending order or `0` if it is not sorted.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### join
-
-Joins all elements of an array into a string and returns this string.
-Uses a separator and an end separator.
 
 ```c#
 // TODO
