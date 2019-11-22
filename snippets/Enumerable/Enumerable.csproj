@@ -24,4 +24,8 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Type\Type.csproj" />
+  </ItemGroup>
+
 </Project>

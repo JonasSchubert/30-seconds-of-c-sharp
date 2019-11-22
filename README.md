@@ -231,6 +231,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <summary>View contents</summary>
 
 * [`is`](#is)
+* [`isNumericType`](#isNumericType)
 * [`isValidJson`](#isValidJson)
 
 </details>
@@ -4325,6 +4326,54 @@ Checks if the provided value is of the specified type.
 
 ```c#
 // TODO
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### isNumericType
+
+Checks if the provided type is of a numeric type.
+
+```c#
+namespace JonasSchubert.Snippets.Type2
+{
+    public static partial class Type2
+    {
+        public static bool IsNumericType(this Type type)
+        {
+            switch (Type.GetTypeCode(type))
+            {
+                case TypeCode.Byte:
+                case TypeCode.SByte:
+                case TypeCode.UInt16:
+                case TypeCode.UInt32:
+                case TypeCode.UInt64:
+                case TypeCode.Int16:
+                case TypeCode.Int32:
+                case TypeCode.Int64:
+                case TypeCode.Decimal:
+                case TypeCode.Double:
+                case TypeCode.Single:
+                    return true;
+                default:
+                    return false;
+            }
+        }
+    }
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+typeof(sbyte).IsNumericType(); # true
+typeof(short).IsNumericType(); # true
+typeof(float).IsNumericType(); # true
+typeof(string).IsNumericType(); # false
+typeof(int[]).IsNumericType(); # false
 ```
 
 </details>
