@@ -11,7 +11,7 @@ namespace JonasSchubert.Snippets.Math
         /// Returns the average of one or more decimal numbers.
         /// </summary>
         /// Linq documentation
-        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum
         public static decimal Average(this decimal[] elements)
         {
             if (elements.Length == 0) return 0;
@@ -22,7 +22,7 @@ namespace JonasSchubert.Snippets.Math
         /// Returns the average of one or more double numbers.
         /// </summary>
         /// Linq documentation
-        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum
         public static double Average(this double[] elements)
         {
             if (elements.Length == 0) return 0;
@@ -33,7 +33,7 @@ namespace JonasSchubert.Snippets.Math
         /// Returns the average of one or more float numbers.
         /// </summary>
         /// Linq documentation
-        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum
         public static float Average(this float[] elements)
         {
             if (elements.Length == 0) return 0;
@@ -44,7 +44,7 @@ namespace JonasSchubert.Snippets.Math
         /// Returns the average of one or more int numbers.
         /// </summary>
         /// Linq documentation
-        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum
         public static double Average(this int[] elements)
         {
             if (elements.Length == 0) return 0;
@@ -55,7 +55,7 @@ namespace JonasSchubert.Snippets.Math
         /// Returns the average of one or more uint numbers.
         /// </summary>
         /// Linq documentation
-        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum?view=netframework-4.7.2
+        /// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.sum
         public static double Average(this uint[] elements)
         {
             if (elements.Length == 0) return 0;
