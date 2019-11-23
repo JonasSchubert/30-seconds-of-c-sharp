@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](./snippets) [![Test](https://img.shields.io/badge/tests-passing-brightgreen.svg)](./snippets) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 # 30 seconds of C#
+
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
 
 Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalarangelo/30-seconds-of-code), but there is no affiliation with that project.
@@ -3151,17 +3152,34 @@ Calculates the factorial of a number.
 
 ### fibonacci
 
-Generates an array, containing the Fibonacci sequence, up until the nth term.
+Generates an list, containing the Fibonacci sequence, up until the nth term.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static List<int> Fibonaci(int length)
+        {
+            var list = new List<int>();
+
+            for (var index = 0; index < length; index++)
+            {
+                list.Add(index <= 1 ? index : list[index - 1] + list[index - 2]);
+            }
+
+            return list;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+Math.Fibonaci(2); # new List<int>() { 0, 1 }
+Math.Fibonaci(7); # new List<int>() { 0, 1, 1, 2, 3, 5, 8 }
 ```
 
 </details>
