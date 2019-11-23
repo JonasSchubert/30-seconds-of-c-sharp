@@ -3136,14 +3136,32 @@ Returns the distance between two points.
 Calculates the factorial of a number.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static uint Factorial(uint number)
+        {
+            var result = 1u;
+
+            for (var index = number; index > 0; index--)
+            {
+                result *= index;
+            }
+
+            return result;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+Math.Factorial(0); # 1
+Math.Factorial(3); # 6
+Math.Factorial(6); # 720
 ```
 
 </details>
