@@ -161,7 +161,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`median`](#median)
 * [`min`](#min)
 * [`primes`](#primes)
-* [`radsToDegrees`](#radsToDegrees)
+* [`radToDeg`](#radToDeg)
 * [`randomIntArrayInRange`](#randomIntArrayInRange)
 * [`randomIntegerInRange`](#randomIntegerInRange)
 * [`randomNumberInRange`](#randomNumberInRange)
@@ -3468,19 +3468,35 @@ Generates primes up to a given number, using the Sieve of Eratosthenes.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### radsToDegrees
+### radToDeg
 
 Converts an angle from radians to degrees.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static double RadToDeg(this decimal radians) => (double)radians * 180.0 / System.Math.PI;
+
+        public static double RadToDeg(this double radians) => radians * 180.0 / System.Math.PI;
+
+        public static double RadToDeg(this float radians) => radians * 180.0 / System.Math.PI;
+
+        public static double RadToDeg(this int radians) => radians * 180.0 / System.Math.PI;
+
+        public static double RadToDeg(this uint radians) => radians * 180.0 / System.Math.PI;
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+(System.Math.PI / 2).RadToDeg() # 90
+(System.Math.PI * -2).RadToDeg() # -360
 ```
 
 </details>
