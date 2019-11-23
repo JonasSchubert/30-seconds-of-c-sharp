@@ -143,7 +143,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`average`](#average)
 * [`averageBy`](#averageBy)
 * [`binomialCoefficient`](#binomialCoefficient)
-* [`degreesToRads`](#degreesToRads)
+* [`degToRads`](#degToRads)
 * [`digitize`](#digitize)
 * [`distance`](#distance)
 * [`factorial`](#factorial)
@@ -3074,19 +3074,35 @@ Evaluates the binomial coefficient of two integers `n` and `k`.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### degreesToRads
+### degToRads
 
 Converts an angle from degrees to radians.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static double DegToRad(this decimal degree) => (double)degree * System.Math.PI / 180.0;
+
+        public static double DegToRad(this double degree) => degree * System.Math.PI / 180.0;
+
+        public static double DegToRad(this float degree) => degree * System.Math.PI / 180.0;
+
+        public static double DegToRad(this int degree) => degree * System.Math.PI / 180.0;
+
+        public static double DegToRad(this uint degree) => degree * System.Math.PI / 180.0;
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+270.0.DegToRad(); # ~ 4.71
+-90u.DegToRad(); # ~ 1.57
+720.DegToRad(); # ~ 12.57
 ```
 
 </details>
