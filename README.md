@@ -248,7 +248,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`hexToRgb`](#hexToRgb)
 * [`mostPerformant`](#mostPerformant)
 * [`prettyBytes`](#prettyBytes)
-* [`randomHexColorCode`](#randomHexColorCode)
+* [`randomHexColor`](#randomHexColor)
 * [`rgbToHex`](#rgbToHex)
 * [`timeTaken`](#timeTaken)
 * [`toOrdinalSuffix`](#toOrdinalSuffix)
@@ -4716,19 +4716,26 @@ Converts a number in bytes to a human-readable string.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### randomHexColorCode
+### randomHexColor
 
-Generates a random hexadecimal color code.
+Generates a random hexadecimal color.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Utility
+{
+    public static partial class Utility
+    {
+        public static string RandomHexColor() =>
+            $"#{(new Random().Next() * 0xFFFFFF * 1000000).ToString("X").PadLeft(6, '0').Substring(0, 6)}";
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+Utility.RandomHexColor(); # "#01A5FF" (e.g.)
 ```
 
 </details>
