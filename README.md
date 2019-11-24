@@ -4740,14 +4740,23 @@ Generates a random hexadecimal color code.
 Converts the values of RGB components to a color code.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Utility
+{
+    public static partial class Utility
+    {
+        public static string RgbToHex(int red, int green, int blue) =>
+            $"#{((red << 16) + (green << 8) + blue).ToString("X").PadLeft(6, '0')}";
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+Utility.RgbToHex(0, 0, 0); # "#000000"
+Utility.RgbToHex(1, 165, 255); # "#01A5FF"
+Utility.RgbToHex(255, 255, 255); # "#FFFFFF"
 ```
 
 </details>
