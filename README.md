@@ -151,7 +151,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`gcd`](#gcd)
 * [`geometricProgression`](#geometricProgression)
 * [`inRange`](#inRange)
-* [`isDivisible`](#isDivisible)
+* [`isDivisibleBy`](#isDivisibleBy)
 * [`isEven`](#isEven)
 * [`isPrime`](#isPrime)
 * [`isOdd`](#isOdd)
@@ -3278,19 +3278,37 @@ Checks if the given number falls within the given range.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isDivisible
+### isDivisibleBy
 
-Checks if the first numeric argument is divisible by the second one.
+Checks if the a number is divisible by another number.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static bool IsDivisibleBy(this decimal value, decimal divider) => divider == 0 ? throw new DivideByZeroException() : value % divider == 0;
+
+        public static bool IsDivisibleBy(this double value, double divider) => divider == 0 ? throw new DivideByZeroException() : value % divider == 0;
+
+        public static bool IsDivisibleBy(this float value, float divider) => divider == 0 ? throw new DivideByZeroException() : value % divider == 0;
+
+        public static bool IsDivisibleBy(this int value, int divider) => divider == 0 ? throw new DivideByZeroException() : value % divider == 0;
+
+        public static bool IsDivisibleBy(this uint value, uint divider) => divider == 0 ? throw new DivideByZeroException() : value % divider == 0;
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+1.IsDivisibleBy(2); # true
+-2.0.IsDivisibleBy(2.0); # true
+1.0f.IsDivisibleBy(2.0f); # false
+2u.IsDivisibleBy(2u); # true
 ```
 
 </details>
@@ -3302,14 +3320,30 @@ Checks if the first numeric argument is divisible by the second one.
 Returns `true` if the given number is even, `false` otherwise.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static bool IsEven(this decimal value) => value % 2 == 0;
+
+        public static bool IsEven(this double value) => value % 2 == 0;
+
+        public static bool IsEven(this float value) => value % 2 == 0;
+
+        public static bool IsEven(this int value) => value % 2 == 0;
+
+        public static bool IsEven(this uint value) => value % 2 == 0;
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+0.IsEven(); # true
+1u.IsEven(); # false
+-2.0.IsEven(); # true
 ```
 
 </details>
@@ -3340,14 +3374,30 @@ Checks if the provided integer is a prime number.
 Returns `true` if the given number is odd, `false` otherwise.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Math
+{
+    public static partial class Math
+    {
+        public static bool IsOdd(this decimal value) => value % 2 == 1;
+
+        public static bool IsOdd(this double value) => value % 2 == 1;
+
+        public static bool IsOdd(this float value) => value % 2 == 1;
+
+        public static bool IsOdd(this int value) => value % 2 == 1;
+
+        public static bool IsOdd(this uint value) => value % 2 == 1;
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+0.IsOdd(); # false
+1u.IsOdd(); # true
+-2.0.IsOdd(); # false
 ```
 
 </details>
