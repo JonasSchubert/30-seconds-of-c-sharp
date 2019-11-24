@@ -4618,14 +4618,22 @@ Returns the first non-null argument.
 Extends a 3-digit color code to a 6-digit color code.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Utility
+{
+    public static partial class Utility
+    {
+        public static string ExtendHex(this string hex) =>
+            $"{string.Join("", (hex.StartsWith('#') ? hex : $"#{hex}").Select(x => x == '#' ? $"{x}" : $"{x}{x}"))}";
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"#03f".ExtendHex(); # "#0033ff"
+"05a".ExtendHex(); # "#0055aa"
 ```
 
 </details>
