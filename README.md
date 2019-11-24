@@ -4723,14 +4723,39 @@ Returns the index of the function in an array of functions which executed the fa
 Converts a number in bytes to a human-readable string.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Utility
+{
+    public static partial class Utility
+    {
+        public static string PrettyBytes(ulong bytes)
+        {
+            var units = new string[] { "B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB" };
+
+            var stringArray = units
+                .Select((unit, index) =>
+                    Math.Floor(bytes / Math.Pow(1e3, index) % 1e3) > 0
+                    ? $"{Math.Floor(bytes / Math.Pow(1e3, index) % 1e3)} {unit}{(Math.Floor(bytes / Math.Pow(1e3, index) % 1e3) > 1 ? "s" : string.Empty)}"
+                    : string.Empty)
+                .Where(x => !string.IsNullOrEmpty(x))
+                .Reverse()
+                .ToArray();
+
+            return stringArray.Length > 0
+                ? string.Join(", ", stringArray)
+                : "0 B";
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+ Utility.PrettyBytes(0ul); # "0 B"
+ Utility.PrettyBytes(1001ul); # "1 KB, 1 B"
+ Utility.PrettyBytes(20000000000000000ul); # "20 PBs"
+ Utility.PrettyBytes(1001001001ul); # "1 GB, 1 MB, 1 KB, 1 B"
 ```
 
 </details>
