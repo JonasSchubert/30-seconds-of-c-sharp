@@ -2035,14 +2035,33 @@ If `n` is greater than or equal to the provided array's length, then return the 
 Returns `true` if the provided predicate function returns `false` for all elements in a collection, `false` otherwise.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.Enumerable
+{
+    public static partial class Enumerable
+    {
+        public static bool None<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate)
+        {
+            try
+            {
+                return enumerable.First(predicate) == null;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+        }
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+new List<int> { 3, 2, 0 }.None(x => x == 1); # true
+new string[] { "Hello", "World" }.None(x => x.Length == 6) # true
+new bool[] { true, false }.None(x => !x); # false
 ```
 
 </details>
