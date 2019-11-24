@@ -5,7 +5,6 @@ namespace JonasSchubert.Snippets.Utility
     /// <summary>
     /// Partial class for utility snippets
     /// </summary>
-    /// Stopwatch documentation
     public static partial class Utility
     {
         /// <summary>
