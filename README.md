@@ -1,8 +1,16 @@
 ![Logo](/logo.png)
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) [![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)](./snippets) [![Test](https://img.shields.io/badge/tests-passing-brightgreen.svg)](./snippets) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
+  <a href="https://github.com/JonasSchubert/30-seconds-of-c-sharp/"><img src="https://img.shields.io/github/stars/JonasSchubert/30-seconds-of-c-sharp.svg"/></a>
+</p>
 
-# 30 seconds of C#
+<p align="center"><h6 style="text-align: center;">Support me</h6></p>
+
+<p align="center">
+  <a href="https://www.paypal.me/GuepardoApps"><img src="https://img.shields.io/badge/paypal-support-blue.svg"/></a>
+</p>
 
 > A curated collection of useful C# snippets that you can understand in 30 seconds or less.
 
