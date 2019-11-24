@@ -4,6 +4,9 @@
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a>
   <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg"/></a>
   <a href="https://github.com/JonasSchubert/30-seconds-of-c-sharp/"><img src="https://img.shields.io/github/stars/JonasSchubert/30-seconds-of-c-sharp.svg"/></a>
+  <a href="https://github.com/JonasSchubert/30-seconds-of-c-sharp/"><img src="https://img.shields.io/github/forks/JonasSchubert/30-seconds-of-c-sharp.svg"/></a>
+  <a href="https://github.com/JonasSchubert/30-seconds-of-c-sharp/"><img src="https://img.shields.io/github/issues/JonasSchubert/30-seconds-of-c-sharp.svg"/></a>
+  <a href="https://github.com/JonasSchubert/30-seconds-of-c-sharp/"><img src="https://img.shields.io/github/contributors/JonasSchubert/30-seconds-of-c-sharp.svg"/></a>
 </p>
 
 <p align="center"><h6 style="text-align: center;">Support me</h6></p>
