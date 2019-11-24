@@ -7,7 +7,7 @@ namespace JonasSchubert.Snippets.Utility
     /// Partial class for utility snippets
     /// </summary>
     /// Stopwatch documentation
-    /// https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?redirectedfrom=MSDN&view=netframework-4.7.2
+    /// https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch
     public static partial class Utility
     {
         /// <summary>

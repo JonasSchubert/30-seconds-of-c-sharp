@@ -4807,14 +4807,12 @@ namespace JonasSchubert.Snippets.Utility
 {
     public static partial class Utility
     {
-        public static bool YesNo(this string test, bool defaultVal = false)
-        {
-            return new Regex(@"^(y|yes)$", RegexOptions.IgnoreCase).IsMatch(test)
+        public static bool YesNo(this string test, bool defaultVal = false) =>
+            new Regex(@"^(y|yes)$", RegexOptions.IgnoreCase).IsMatch(test)
                 ? true
                 : new Regex(@"^(n|no)$", RegexOptions.IgnoreCase).IsMatch(test)
                     ? false
                     : defaultVal;
-        }
     }
 }
 ```
