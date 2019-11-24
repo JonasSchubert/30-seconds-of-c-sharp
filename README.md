@@ -242,16 +242,12 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <details>
 <summary>View contents</summary>
 
-* [`coalesce`](#coalesce)
 * [`extendHex`](#extendHex)
-* [`getUrlParameters`](#getUrlParameters)
 * [`hexToRgb`](#hexToRgb)
-* [`mostPerformant`](#mostPerformant)
 * [`prettyBytes`](#prettyBytes)
 * [`randomHexColor`](#randomHexColor)
 * [`rgbToHex`](#rgbToHex)
 * [`timeTaken`](#timeTaken)
-* [`toOrdinalSuffix`](#toOrdinalSuffix)
 * [`yesNo`](#yesNo)
 
 </details>
@@ -1950,7 +1946,8 @@ new string[] { "Hello", "world", "organisation", "seconds", "of" }.IntersectionW
 
 <br>[↑ Back to top](#table-of-contents)
 
-### jsonToCsv ![advanced](/advanced.svg)
+### jsonToCsv
+![advanced](/advanced.svg)
 
 Converts an array of objects to a comma-separated values (CSV) string that contains only the `columns` specified.
 
@@ -2144,7 +2141,8 @@ Groups the elements into two arrays, depending on the provided function's truthi
 
 <br>[↑ Back to top](#table-of-contents)
 
-### permutations ![advanced](/advanced.svg)
+### permutations
+![advanced](/advanced.svg)
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each array element.
 
@@ -2203,7 +2201,8 @@ Mutates the original array to filter out the values specified.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### pullAtIndex ![advanced](/advanced.svg)
+### pullAtIndex
+![advanced](/advanced.svg)
 
 Mutates the original array to filter out the values at the specified indexes.
 
@@ -2222,7 +2221,8 @@ Mutates the original array to filter out the values at the specified indexes.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### pullAtValue ![advanced](/advanced.svg)
+### pullAtValue
+![advanced](/advanced.svg)
 
 Mutates the original array to filter out the values specified. Returns the removed elements.
 
@@ -2241,7 +2241,8 @@ Mutates the original array to filter out the values specified. Returns the remov
 
 <br>[↑ Back to top](#table-of-contents)
 
-### pullBy ![advanced](/advanced.svg)
+### pullBy
+![advanced](/advanced.svg)
 
 Mutates the original array to filter out the values specified, based on a given iterator function.
 
@@ -2600,7 +2601,8 @@ Returns the highest index at which value should be inserted into array in order 
 
 <br>[↑ Back to top](#table-of-contents)
 
-### stableSort ![advanced](/advanced.svg)
+### stableSort
+![advanced](/advanced.svg)
 
 Performs stable sorting of an array, preserving the initial indexes of items when their values are the same.
 Does not mutate the original array, but returns a new array instead.
@@ -3442,7 +3444,8 @@ Returns the least common multiple of two or more numbers.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### luhnCheck ![advanced](/advanced.svg)
+### luhnCheck
+![advanced](/advanced.svg)
 
 Implementation of the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) used to validate a variety of identification numbers, such as credit card numbers, IMEI numbers, National Provider Identifier numbers etc.
 
@@ -3914,7 +3917,8 @@ Converts a comma-separated values (CSV) string to a 2D array.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### csvToJson ![advanced](/advanced.svg)
+### csvToJson
+![advanced](/advanced.svg)
 
 Converts a comma-separated values (CSV) string to a 2D array of objects.
 The first row of the string is used as the title row.
@@ -4308,7 +4312,8 @@ Check if a string starts with a given regex.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### stringPermutations ![advanced](/advanced.svg)
+### stringPermutations
+![advanced](/advanced.svg)
 
 ⚠️ **WARNING**: This function's execution time increases exponentially with each character.
 
@@ -4462,7 +4467,8 @@ Unescapes escaped HTML characters.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### urlJoin ![advanced](/advanced.svg)
+### urlJoin
+![advanced](/advanced.svg)
 
 Joins all given URL segments together, then normalizes the resulting URL
 
@@ -4594,25 +4600,6 @@ Checks if the provided argument is a valid JSON.
 ---
  ## 🔧 Utility
 
-### coalesce
-
-Returns the first non-null argument.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### extendHex
 
 Extends a 3-digit color code to a 6-digit color code.
@@ -4640,26 +4627,8 @@ namespace JonasSchubert.Snippets.Utility
 
 <br>[↑ Back to top](#table-of-contents)
 
-### getUrlParameters
-
-Returns an object containing the parameters of the current URL.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### hexToRgb ![advanced](/advanced.svg)
+### hexToRgb
+![advanced](/advanced.svg)
 
 Converts a color code to a `rgb()` or `rgba()` string if alpha value is provided.
 
@@ -4699,26 +4668,8 @@ Utility.HexToRgb("#27ae60ff"); # "rgba(39, 174, 96, 255)"
 
 <br>[↑ Back to top](#table-of-contents)
 
-### mostPerformant
-
-Returns the index of the function in an array of functions which executed the fastest.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### prettyBytes ![advanced](/advanced.svg)
+### prettyBytes
+![advanced](/advanced.svg)
 
 Converts a number in bytes to a human-readable string.
 
@@ -4843,25 +4794,6 @@ namespace JonasSchubert.Snippets.Utility
 
 ```c#
 Utility.TimeTaken(() => true) # 13.37ms, true
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### toOrdinalSuffix
-
-Adds an ordinal suffix to a number.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
