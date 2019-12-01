@@ -242,9 +242,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <details>
 <summary>View contents</summary>
 
-* [`is`](#is)
 * [`isNumericType`](#isNumericType)
-* [`isValidJson`](#isValidJson)
 
 </details>
 
@@ -4521,25 +4519,6 @@ Converts a given string into an array of words.
 ---
  ## 📃️ Type
 
-### is
-
-Checks if the provided value is of the specified type.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### isNumericType
 
 Checks if the provided type is of a numeric type.
@@ -4582,25 +4561,6 @@ typeof(short).IsNumericType(); # true
 typeof(float).IsNumericType(); # true
 typeof(string).IsNumericType(); # false
 typeof(int[]).IsNumericType(); # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### isValidJson
-
-Checks if the provided argument is a valid JSON.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
