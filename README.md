@@ -4382,14 +4382,26 @@ Converts a string to camelcase.
 Converts a string to kebab case.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string ToKebabCase(this string input) =>
+            string.Join("-", Regex.Matches(input, @"/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g").Select(x => x.Value.ToLower()));
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"camelCase".ToKebabCase(); # "camel-case"
+"some text".ToKebabCase(); # "some-text"
+"some-mixed_string With spaces_underscores-and-hyphens".ToKebabCase(); # "some-mixed-string-with-spaces-underscores-and-hyphens"
+"AllThe-small Things".ToKebabCase(); # "all-the-small-things"
+"IAmListeningToFmWhileLoadingDifferentUrlOnMyBrowserAndAlsoEditingXmlAndHtml".ToKebabCase(); # "i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-xml-and-html"
 ```
 
 </details>
