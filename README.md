@@ -4363,14 +4363,29 @@ Removes HTML/XML tags from string.
 Converts a string to camelcase.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string ToCamelCase(this string input)
+        {
+            var value = string.Join("", Regex.Matches(input, @"/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g")
+                .Select(x => $"{x.Value.First().ToString().ToUpper()}{x.Value.Substring(1).ToLower()}"));
+            return char.ToLowerInvariant(value[0]) + value.Substring(1);
+        }
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"some_database_field_name".ToCamelCase(); # "someDatabaseFieldName"
+"Some label that needs to be camelized".ToCamelCase(); # "someLabelThatNeedsToBeCamelized"
+"some-javascript-property".ToCamelCase(); # "someJavascriptProperty"
+"some-mixed_string with spaces_underscores-and-hyphens".ToCamelCase(); # "someMixedStringWithSpacesUnderscoresAndHyphens"
 ```
 
 </details>
