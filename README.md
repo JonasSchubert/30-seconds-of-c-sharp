@@ -212,12 +212,12 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`fromCamelCase`](#fromCamelCase)
 * [`indentString`](#indentString)
 * [`isAbsoluteUrl`](#isAbsoluteUrl)
-* [`isAnagram`](#isAnagram)
-* [`isLowerCase`](#isLowerCase)
-* [`isUpperCase`](#isUpperCase)
+* [`isAnagramOf`](#isAnagramOf)
+* [`isLower`](#isLower)
+* [`isPalindrome`](#isPalindrome)
+* [`isUpper`](#isUpper)
 * [`mask`](#mask)
 * [`pad`](#pad)
-* [`palindrome`](#palindrome)
 * [`pluralize`](#pluralize)
 * [`removeNonAscii`](#removeNonAscii)
 * [`reverseString`](#reverseString)
@@ -4089,57 +4089,112 @@ Returns `true` if the given string is an absolute URL, `false` otherwise.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isAnagram
+### isAnagramOf
 
-Checks if a string is an anagram of another string (case-insensitive, ignores spaces, punctuation and special characters).
+Checks if a string is an anagram of another string (case-insensitive).
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static bool IsAnagramOf(this string input, string compare) => input.TransformToCompare() == compare.TransformToCompare();
+
+        private static string TransformToCompare(this string input) => string.Join(string.Empty, input.ToLower().OrderBy(x => x));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"iceman".IsAnagramOf("cinema"); # true
+"icemAn".IsAnagramOf("cinema"; # true
+"icem an".IsAnagramOf("cinema"; # false
+"ic.EMan".IsAnagramOf("cinema"; # false
+"icman".IsAnagramOf("cinema"; # false
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isLowerCase
+### isLower
 
 Checks if a string is lower case.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static bool IsLower(this string input) => input == input.ToLower();
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"abc".IsLower(); # true
+"a3@$".IsLower(); # true
+"Ab4".IsLower(); # false
 ```
 
 </details>
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isUpperCase
+### isPalindrome
 
-Checks if a string is upper case.
+Returns `true` if the given string is a palindrome, `false` otherwise.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static bool IsPalindrome(this string input) => input.ToLower() == string.Join(string.Empty, input.ToCharArray().Reverse()).ToLower();
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"taco cat".IsPalindrome(); # true
+"tAcocat".IsPalindrome(); # true
+"tacoca".IsPalindrome(); # false
+```
+
+</details>
+
+<br>[↑ Back to top](#table-of-contents)
+
+### isUpper
+
+Checks if a string is upper case.
+
+```c#
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static bool IsUpper(this string input) => input == input.ToUpper();
+    }
+}
+```
+
+<details>
+<summary>Examples</summary>
+
+```c#
+"ABC".IsUpper(); # true
+"A3@$".IsUpper(); # true
+"aB4".IsUpper(); # false
 ```
 
 </details>
@@ -4168,25 +4223,6 @@ Replaces all but the last `num` of characters with the specified mask character.
 ### pad
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### palindrome
-
-Returns `true` if the given string is a palindrome, `false` otherwise.
 
 ```c#
 // TODO
