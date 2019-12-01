@@ -4375,7 +4375,6 @@ namespace JonasSchubert.Snippets.String
         }
     }
 }
-
 ```
 
 <details>
@@ -4457,14 +4456,25 @@ namespace JonasSchubert.Snippets.String
 Converts a string to title case.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string ToTitleCase(this string input) =>
+            string.Join(" ", Regex.Matches(input, @"/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g")
+                .Select(x => $"{x.Value.First().ToString().ToUpper()}{x.Value.Substring(1).ToLower()}"));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"some_database_field_name".ToTitleCase(); # "Some Database Field Name"
+"Some label that needs to be title-cased".ToTitleCase(); # "Some Label That Needs To Be Title Cased"
+"some-package-name".ToTitleCase(); # "Some Package Name"
+"some-mixed_string with spaces_underscores-and-hyphens".ToTitleCase(); # "Some Mixed String With Spaces Underscores And Hyphens"
 ```
 
 </details>
