@@ -4165,7 +4165,7 @@ namespace JonasSchubert.Snippets.String
 <summary>Examples</summary>
 
 ```c#
-"taco cat".IsPalindrome(); # true
+"tacocat".IsPalindrome(); # true
 "tAcocat".IsPalindrome(); # true
 "tacoca".IsPalindrome(); # false
 ```
