@@ -230,7 +230,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`toKebabCase`](#toKebabCase)
 * [`toSnakeCase`](#toSnakeCase)
 * [`toTitleCase`](#toTitleCase)
-* [`truncateString`](#truncateString)
+* [`truncate`](#truncate)
 * [`urlJoin`](#urlJoin)
 * [`words`](#words)
 
@@ -4434,19 +4434,27 @@ Converts a string to title case.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### truncateString
+### truncate
 
 Truncates a string up to a specified length.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string Truncate(this string input, int maxLength) =>
+            input.Length > maxLength ? $"{input.Substring(0, maxLength > 3 ? maxLength - 3 : maxLength)}..." : input;
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"Hello World".Truncate(4); # "H..."
+"Hello World".Truncate(12); # "Hello World"
 ```
 
 </details>
