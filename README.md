@@ -4495,17 +4495,26 @@ Joins all given URL segments together, then normalizes the resulting URL
 
 ### words
 
-Converts a given string into an array of words.
+Converts a given string into a list of words.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static List<string> Words(this string input, string pattern = @"\w+[^\s]*\w+|\w") =>
+            Regex.Matches(input, pattern).Select(x => x.Value).ToList();
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"Hello World".Words(); # new List<string> { "Hello", "World" }
+"Hello".Words(); # new List<string> { "Hello" }
+"  ".Words(); # new List<string>()
 ```
 
 </details>
