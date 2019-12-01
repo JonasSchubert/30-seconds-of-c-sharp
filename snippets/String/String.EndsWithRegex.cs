@@ -10,9 +10,6 @@ namespace JonasSchubert.Snippets.String
         /// <summary>
         /// Check if a string ends with a given substring using a regex
         /// </summary>
-        public static bool EndsWithRegex(this string input, Regex regex)
-        {
-            return regex.IsMatch(input);
-        }
+        public static bool EndsWithRegex(this string input, Regex regex) => regex.IsMatch(input);
     }
 }

@@ -3979,10 +3979,7 @@ namespace JonasSchubert.Snippets.String
 {
     public static partial class String
     {
-        public static bool EndsWithRegex(this string input, Regex regex)
-        {
-            return regex.IsMatch(input);
-        }
+        public static bool EndsWithRegex(this string input, Regex regex) => regex.IsMatch(input);
     }
 }
 ```
