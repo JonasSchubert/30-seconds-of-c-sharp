@@ -231,7 +231,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`toSnakeCase`](#toSnakeCase)
 * [`toTitleCase`](#toTitleCase)
 * [`truncateString`](#truncateString)
-* [`unescapeHTML`](#unescapeHTML)
 * [`urlJoin`](#urlJoin)
 * [`words`](#words)
 
@@ -4438,25 +4437,6 @@ Converts a string to title case.
 ### truncateString
 
 Truncates a string up to a specified length.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### unescapeHTML
-
-Unescapes escaped HTML characters.
 
 ```c#
 // TODO
