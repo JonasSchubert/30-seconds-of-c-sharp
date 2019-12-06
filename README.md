@@ -4276,16 +4276,23 @@ Returns the singular or plural form of the word based on the input number. If th
 ### removeNonAscii
 
 Removes non-printable ASCII characters.
+Use a regular expression to remove non-printable ASCII characters.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string RemoveNonAscii(this string input) => Regex.Replace(input, "[^\x20-\x7E]", "");
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"äÄçÇéÉêlorem ipsumöÖÐþúÚ".RemoveNonAscii(); # "lorem ipsum"
 ```
 
 </details>
