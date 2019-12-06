@@ -4237,16 +4237,28 @@ Replaces all but the last `num` of characters with the specified mask character.
 ### pad
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.
+Use `PadLeft()` and `PadRight()` to pad both sides of the given string.
+Omit the third argument, `char`, to use the whitespace character as the default padding character.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string Pad(this string input, int length, char pad = ' ') => input.PadLeft((input.Length + length) / 2, pad).PadRight(length, pad);
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"Hello World.".Pad(20); # "    Hello World.    "
+"Hello World.".Pad(5, '-'); # "Hello World."
+"Dog".Pad(8, ' '); # "  Dog   "
+"42".Pad(6, '0'); # "004200"
 ```
 
 </details>
