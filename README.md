@@ -231,7 +231,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`toSnakeCase`](#toSnakeCase)
 * [`toTitleCase`](#toTitleCase)
 * [`truncate`](#truncate)
-* [`urlJoin`](#urlJoin)
 * [`words`](#words)
 
 </details>
@@ -4414,16 +4413,25 @@ Generates all permutations of a string (contains duplicates).
 ### stripHtmlTags
 
 Removes HTML/XML tags from string.
+Use a regular expression to remove HTML/XML tags from a string.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string StripHtmlTags(this string input) => Regex.Replace(input, "<[^>]*>", "");
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"<p><em>lorem</em> <strong>ipsum</strong></p>".StripHtmlTags(); # "lorem ipsum"
+"<div><br/>Hello <br />World</div>".StripHtmlTags(); # "Hello World"
 ```
 
 </details>
@@ -4574,26 +4582,6 @@ namespace JonasSchubert.Snippets.String
 ```c#
 "Hello World".Truncate(4); # "H..."
 "Hello World".Truncate(12); # "Hello World"
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### urlJoin
-![advanced](/advanced.svg)
-
-Joins all given URL segments together, then normalizes the resulting URL
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
