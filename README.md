@@ -218,7 +218,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`isUpper`](#isUpper)
 * [`mask`](#mask)
 * [`pad`](#pad)
-* [`pluralize`](#pluralize)
 * [`removeNonAscii`](#removeNonAscii)
 * [`reverse`](#reverse)
 * [`sortCharactersInString`](#sortCharactersInString)
@@ -4238,25 +4237,6 @@ Replaces all but the last `num` of characters with the specified mask character.
 ### pad
 
 Pads a string on both sides with the specified character, if it's shorter than the specified length.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### pluralize
-
-Returns the singular or plural form of the word based on the input number. If the first argument is an `object`, it will use a closure by returning a function that can auto-pluralize words that don't simply end in `s` if the supplied dictionary contains the word.
 
 ```c#
 // TODO
