@@ -4065,25 +4065,6 @@ namespace JonasSchubert.Snippets.String
 
 <br>[↑ Back to top](#table-of-contents)
 
-### indentString
-
-Indents each line in the provided string.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### isAnagramOf
 
 Checks if a string is an anagram of another string (case-insensitive).
