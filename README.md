@@ -220,7 +220,7 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`pad`](#pad)
 * [`pluralize`](#pluralize)
 * [`removeNonAscii`](#removeNonAscii)
-* [`reverseString`](#reverseString)
+* [`reverse`](#reverse)
 * [`sortCharactersInString`](#sortCharactersInString)
 * [`splitLines`](#splitLines)
 * [`startsWithRegex`](#startsWithRegex)
@@ -4278,7 +4278,7 @@ Removes non-printable ASCII characters.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### reverseString
+### reverse
 
 Reverses a string.
 
