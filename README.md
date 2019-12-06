@@ -4283,14 +4283,21 @@ Removes non-printable ASCII characters.
 Reverses a string.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string Reverse(this string input) => string.Join(string.Empty, input.ToCharArray().Reverse());
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"My name is Jonas Schubert".Reverse(); # "trebuhcS sanoJ si eman yM"
+"!This is, maybe not, but important...".Reverse(); # "...tnatropmi tub ,ton ebyam ,si sihT!"
 ```
 
 </details>
