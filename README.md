@@ -200,18 +200,11 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 <summary>View contents</summary>
 
 * [`byteSize`](#byteSize)
-* [`capitalize`](#capitalize)
-* [`capitalizeEveryWord`](#capitalizeEveryWord)
 * [`countVowels`](#countVowels)
 * [`csvToArray`](#csvToArray)
 * [`csvToJson`](#csvToJson)
-* [`decapitalize`](#decapitalize)
 * [`endsWithRegex`](#endsWithRegex)
-* [`escapeHtml`](#escapeHtml)
-* [`escapeRegExp`](#escapeRegExp)
 * [`fromCamelCase`](#fromCamelCase)
-* [`indentString`](#indentString)
-* [`isAbsoluteUrl`](#isAbsoluteUrl)
 * [`isAnagramOf`](#isAnagramOf)
 * [`isLower`](#isLower)
 * [`isPalindrome`](#isPalindrome)
@@ -220,7 +213,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`pad`](#pad)
 * [`removeNonAscii`](#removeNonAscii)
 * [`reverse`](#reverse)
-* [`sortCharactersInString`](#sortCharactersInString)
 * [`splitLines`](#splitLines)
 * [`startsWithRegex`](#startsWithRegex)
 * [`stripHtmlTags`](#stripHtmlTags)
@@ -3846,44 +3838,6 @@ Returns the length of a string in bytes.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### capitalize
-
-Capitalizes the first letter of a string.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### capitalizeEveryWord
-
-Capitalizes the first letter of every word in a string.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### countVowels
 
 Returns number of vowels in provided string.
@@ -3943,25 +3897,6 @@ The first row of the string is used as the title row.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### decapitalize
-
-Decapitalizes the first letter of a string.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### endsWithRegex
 
 Check if a string ends with a given substring using a regex.
@@ -3986,44 +3921,6 @@ namespace JonasSchubert.Snippets.String
 ```c#
 "Hello World".EndsWithRegex(@"[dolrwDOLRW]{5}$") # true
 "Hello World, this is it".EndsWithRegex(@"[dolrwDOLRW]{5}$") # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### escapeHtml
-
-Escapes a string for use in HTML.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### escapeRegExp
-
-Escapes a string to use in a regular expression.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
@@ -4294,25 +4191,6 @@ namespace JonasSchubert.Snippets.String
 ```c#
 "My name is Jonas Schubert".Reverse(); # "trebuhcS sanoJ si eman yM"
 "!This is, maybe not, but important...".Reverse(); # "...tnatropmi tub ,ton ebyam ,si sihT!"
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### sortCharactersInString
-
-Alphabetically sorts the characters in a string.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
