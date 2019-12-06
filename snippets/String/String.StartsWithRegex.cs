@@ -8,8 +8,8 @@ namespace JonasSchubert.Snippets.String
     public static partial class String
     {
         /// <summary>
-        /// Check if a string ends with a given substring using a regex
+        /// Check if a string starts with a given substring using a regex
         /// </summary>
-        public static bool EndsWithRegex(this string input, string substring) => new Regex($"{substring}$").IsMatch(input);
+        public static bool StartsWithRegex(this string input, string substring) => new Regex($"^{substring}").IsMatch(input);
     }
 }

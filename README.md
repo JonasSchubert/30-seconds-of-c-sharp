@@ -3967,9 +3967,9 @@ Decapitalizes the first letter of a string.
 
 ### endsWithRegex
 
-Check if a string is ends with a given substring using a regex.
+Check if a string ends with a given substring using a regex.
 
-The method excepts the string to test and a regex.
+The method excepts the string to test and a substring to test against.
 
 Most other checks are already [integrated](https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith).
 
@@ -3978,7 +3978,7 @@ namespace JonasSchubert.Snippets.String
 {
     public static partial class String
     {
-        public static bool EndsWithRegex(this string input, Regex regex) => regex.IsMatch(input);
+        public static bool EndsWithRegex(this string input, string substring) => new Regex($"{substring}$").IsMatch(input);
     }
 }
 ```
@@ -3987,7 +3987,8 @@ namespace JonasSchubert.Snippets.String
 <summary>Examples</summary>
 
 ```c#
-"Hello World".EndsWithRegex(new Regex(@"[dolrwDOLRW]{5}$")) # true
+"Hello World".EndsWithRegex(@"[dolrwDOLRW]{5}$") # true
+"Hello World, this is it".EndsWithRegex(@"[dolrwDOLRW]{5}$") # false
 ```
 
 </details>
@@ -4336,17 +4337,29 @@ Splits a multiline string into an array of lines.
 
 ### startsWithRegex
 
-Check if a string starts with a given regex.
+Check if a string starts with a given substring using a regex.
+
+The method excepts the string to test and a substring to test against.
+
+Most other checks are already [integrated](https://docs.microsoft.com/en-us/dotnet/api/system.string.endswith).
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static bool StartsWithRegex(this string input, string substring) => new Regex($"^{substring}").IsMatch(input);
+    }
+}
+
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"Hello World".StartsWithRegex(@"[ehloEHLO]{5}$") # true
+"Well, hello World".StartsWithRegex(@"[ehloEHLO]{5}$") # false
 ```
 
 </details>
