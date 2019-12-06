@@ -4084,25 +4084,6 @@ Indents each line in the provided string.
 
 <br>[↑ Back to top](#table-of-contents)
 
-### isAbsoluteUrl
-
-Returns `true` if the given string is an absolute URL, `false` otherwise.
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
 ### isAnagramOf
 
 Checks if a string is an anagram of another string (case-insensitive).
