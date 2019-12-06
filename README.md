@@ -4036,16 +4036,32 @@ Escapes a string to use in a regular expression.
 ### fromCamelCase
 
 Converts a string from camelcase.
+Makes all words lowercase and combines them using a provided separator (default is one whitespace).
+Of the param isSentence == true, the first letter of the sentence will be uppercase and a dot will be added at the end (default is true).
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string FromCamelCase(this string input, string separator = " ", bool isSentence = true)
+        {
+            var value = string
+                .Join(separator, Regex.Matches(input, @"/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g"))
+                .ToLower();
+            return isSentence ? $"{char.ToUpperInvariant(value[0])}{value.Substring(1)}." : value;
+        }
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"someDatabaseFieldName".FromCamelCase(); # "Some database field name."
+"someLabelThatNeedsToBeCamelized".FromCamelCase("-", false); # "some-label-that-needs-to-be-camelized"
+"someJavascriptProperty".FromCamelCase("_", false); # "some_javascript_property"
 ```
 
 </details>
