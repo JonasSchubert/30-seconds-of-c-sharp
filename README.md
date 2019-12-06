@@ -224,7 +224,6 @@ Note: This project is inspired by [30 Seconds of Code](https://github.com/Chalar
 * [`sortCharactersInString`](#sortCharactersInString)
 * [`splitLines`](#splitLines)
 * [`startsWithRegex`](#startsWithRegex)
-* [`stringPermutations`](#stringPermutations)
 * [`stripHtmlTags`](#stripHtmlTags)
 * [`toCamelCase`](#toCamelCase)
 * [`toKebabCase`](#toKebabCase)
@@ -4343,14 +4342,20 @@ Alphabetically sorts the characters in a string.
 Splits a multiline string into an array of lines.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string[] SplitLines(this string input) => Regex.Split(input, "\r?\n");
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"This\nis a\nmultiline\nstring.\n".SplitLines(); # new string[] { "This", "is a", "multiline", "string.", "" }
 ```
 
 </details>
@@ -4382,28 +4387,6 @@ namespace JonasSchubert.Snippets.String
 ```c#
 "Hello World".StartsWithRegex(@"[ehloEHLO]{5}$") # true
 "Well, hello World".StartsWithRegex(@"[ehloEHLO]{5}$") # false
-```
-
-</details>
-
-<br>[↑ Back to top](#table-of-contents)
-
-### stringPermutations
-![advanced](/advanced.svg)
-
-⚠️ **WARNING**: This function's execution time increases exponentially with each character.
-
-Generates all permutations of a string (contains duplicates).
-
-```c#
-// TODO
-```
-
-<details>
-<summary>Examples</summary>
-
-```c#
-// TODO
 ```
 
 </details>
