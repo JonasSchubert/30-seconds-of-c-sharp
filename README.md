@@ -3824,7 +3824,25 @@ Method.Times(((int start, int end) => new Random().Next(start, end)), 6, 0, 100)
 Returns the length of a string in bytes.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static int ByteSize(this string input) => System.Text.Encoding.Default.GetByteCount(input);
+
+        public static int ByteSizeAscii(this string input) => System.Text.Encoding.ASCII.GetByteCount(input);
+
+        public static int ByteSizeBigEndianUnicode(this string input) => System.Text.Encoding.BigEndianUnicode.GetByteCount(input);
+
+        public static int ByteSizeUnicode(this string input) => System.Text.Encoding.Unicode.GetByteCount(input);
+
+        public static int ByteSizeUtf7(this string input) => System.Text.Encoding.UTF7.GetByteCount(input);
+
+        public static int ByteSizeUtf8(this string input) => System.Text.Encoding.UTF8.GetByteCount(input);
+
+        public static int ByteSizeUtf32(this string input) => System.Text.Encoding.UTF32.GetByteCount(input);
+    }
+}
 ```
 
 <details>
@@ -3843,7 +3861,11 @@ Returns the length of a string in bytes.
 Returns number of vowels in provided string.
 
 ```c#
-// TODO
+"".ByteSize(); # 0
+"Hello World".ByteSize(); # 11
+"Hello World".ByteSizeUnicode(); # 22
+"Hello World".ByteSizeUtf32(); # 44
+"This is 30 seconds of C.".ByteSizeBigEndianUnicode(); # 48
 ```
 
 <details>
