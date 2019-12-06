@@ -4217,17 +4217,38 @@ namespace JonasSchubert.Snippets.String
 
 ### mask
 
-Replaces all but the last `num` of characters with the specified mask character.
+Replaces all but the last `length` of characters with the specified `mask` character.
+Omit the second argument, `length`, to keep a default of `4` characters unmasked.
+If `length` is negative, the unmasked characters will be at the start of the string.
+Omit the third argument, `mask`, to use a default character of `'*'` for the mask.
 
 ```c#
-// TODO
+namespace JonasSchubert.Snippets.String
+{
+    public static partial class String
+    {
+        public static string Mask(this string input, int length = 4, char mask = '*') =>
+            length >= input.Length
+            ? new string(mask, input.Length)
+            : length >= 0
+                ? input.Remove(0, input.Length - length).Insert(0, new string(mask, input.Length - length))
+                : -length >= input.Length
+                    ? input
+                    : input.Remove(-length, input.Length + length).Insert(-length, new string(mask, input.Length + length));
+    }
+}
 ```
 
 <details>
 <summary>Examples</summary>
 
 ```c#
-// TODO
+"1234567890".Mask(); # "******7890"
+"1234567890".Mask(3); # "*******890"
+"1234567890".Mask(0); # "**********"
+"1234567890".Mask(-4); # "1234******"
+"1234567890".Mask(20, '-'); # "----------"
+"1234567890".Mask(-20, '-'); # "1234567890"
 ```
 
 </details>
